@@ -21,9 +21,9 @@ const Header = () => (
   <div>
     <header className="App-header">
       <div className = "row">
-    <Link to={`/`}>
-      <a className = "header-option px-3">People</a>
 
+    <Link to={`/peopleList`}>
+      <a className = "header-option px-3">People</a>
     </Link>
     <div className="text-center">
       <h2 className ="text-white"> Star P G </h2>
