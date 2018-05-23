@@ -21,14 +21,13 @@ class PeopleList extends Component {
   }
 
   render() {
-    return (
-      // TODO: render DOM that will contain an element that calls renderPeople().
-    );
+    // TODO: render DOM that will contain an element that calls renderPeople().
+    return
   }
 }
 
 function mapStateToProps(state) {
-// TODO: 
+// TODO:
 }
 
 function mapDispatchToProps(dispatch) {

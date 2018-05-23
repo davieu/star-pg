@@ -1,5 +1,82 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+.text-center{
+  margin: auto;
+}
+
+.center{
+  margin: auto;
+}
+
+.floating-box{
+  position: fixed; /* could be absolute */
+  top: 0; left: 0px; bottom: 0; right: 0;
+  margin: auto;
+  width: 300px;
+  height: 250px;
+  border: solid 1px;
+  background-color: white
+}
+
+.tiny-thumbnail{
+  height: 45px;
+  width: 45px;
+  object-fit: cover;
+}
+
+.default-img{
+  height: 175px;
+  width: 175px;
+  object-fit: cover;
+}
+
+.text-black{
+  color: black;
+  font-style: none;
+}
+
+
+
+.box-center{
+  width: 700px;
+  padding: 30px;
+  background-color: lightgray;
+}
+
+.btn-options{
+  background-color: #349;
+  color: white;
+  border-radius: .25rem;
+  width: 63px
+}
+
+.btn-gray{
+  background-color: #349;
+  color: white;
+  height: 40px;
+  margin-top: 5px;
+  width: 150px;
+}
+
+.App-logo {
+  /* animation: App-logo-spin infinite 20s linear; */
+  height: 75px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 80px;
+  padding: 8px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
