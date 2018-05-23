@@ -1,0 +1,99 @@
+{
+  "url": "http://starwars.wikia.com/wiki/The_Essential_Guide_to_Weapons_and_Technology",
+  "result": {
+    "extractorData": {
+      "url": "http://starwars.wikia.com/wiki/The_Essential_Guide_to_Weapons_and_Technology",
+      "data": [{
+        "group": [{
+          "Edit": [{
+            "href": "http://starwars.wikia.com/wiki/The_Essential_Guide_to_Weapons_and_Technology?action=edit&section=1",
+            "text": "Edit"
+          }]
+        }, {
+          "Edit": [{
+            "href": "http://starwars.wikia.com/wiki/The_Essential_Guide_to_Weapons_and_Technology?action=edit&section=2",
+            "text": "Edit"
+          }],
+          "Headline": [{
+            "text": "Ranged weapons"
+          }]
+        }, {
+          "Headline": [{
+            "text": "Blasters (DH-17 blaster pistol) \nBlaster rifle (E-11 blaster rifle) \nHeavy blaster pistol (DL-44 heavy blaster pistol) \nSporting blaster (Defender sporting blaster) \nLight repeating blaster (T-21 light repeating blaster) \nE-Web repeating blaster \nJawa ionization blaster \nBowcaster \nBeam tube (Emperor-4 beam tube) \nSsi-ruuvi paddle beamer \nDisruptor (DX-2 disruptor pistol, DXR-6 disruptor rifle) \nSonic pistol (Sd-77 sonic pistol, Sg-82 sonic rifle) \nWrist rockets (MM9 rocket system) \nStokhli spray stick \nProjectile weapons (Oriolanis Striker Projectile Pistol, Dressellian projectile rifle) \nFlame projector (C-22 flame carbine, CR-24 flame rifle, ZX miniature flame projector) \nDart shooter (Stealth-2VX palm shooter, PRP-502 hold-out dart shooter) \nFlechette launcher (FWG-5 flechette pistol, FC-1 flechette launcher) \nMissile tube (PLX-2M portable missile launcher) \nThermal detonator (Class-A thermal detonator) \nGrenades (G-20 Glop grenade, C-22 fragmentation grenade, WW-41 CryoBan grenade) \nGrenade mortar (MobileMortar-3) \nBlaster artillery \nAnti-vehicle artillery \nAnti-infantry battery"
+          }]
+        }, {
+          "Edit": [{
+            "href": "http://starwars.wikia.com/wiki/The_Essential_Guide_to_Weapons_and_Technology?action=edit&section=3",
+            "text": "Edit"
+          }],
+          "Headline": [{
+            "text": "Melee weapons"
+          }]
+        }, {
+          "Headline": [{
+            "text": "Lightsaber \nStaffsaber \nGaderffii \nForce pike (Controller FP) \nVibro-ax (Clan Groogrun vibro-ax, BD-1 Cutter vibro-ax) \nVibroblade (Treppus-2 vibroblade, Vibroknuckler) \nRyyk blades \nStun baton (Merr-Sonn stun baton, Merr-Sonn KZZ riot armor) \nIndividual field disruptor (Evasive-13 individual field disruptor)"
+          }]
+        }, {
+          "Edit": [{
+            "href": "http://starwars.wikia.com/wiki/The_Essential_Guide_to_Weapons_and_Technology?action=edit&section=4",
+            "text": "Edit"
+          }],
+          "Headline": [{
+            "text": "Starship and planetary weapons and defenses"
+          }]
+        }, {
+          "Headline": [{
+            "text": "Proton torpedoes (MG7-A proton torpedo, MG7 proton torpedo launcher) \nConcussion missiles (ST2 concussion missile, ST2 concussion missile rack) \nLaser cannons (KX9 laser cannon, AG-2G quad laser cannon) \nDeflector shield generator (ISD-72x shield generator dome, Chempat shield generator) \nIon cannons (NK-7 ion cannon) \nTractor beam projector (Q7 tractor beam projector) \nTurbolasers (XX-9 heavy turbolaser) \nProton grenade (7-PrG proton grenade) \nDiamond boron missile (MS-15 diamond boron missile) \nCluster bomb (CL-3 antistarfighter cluster bomb) \nMine (Defender ion mine, 3HX3 repulsorlift mine) \nPlanetary ion cannons (v-150 Planet Defender) \nPlanetary turbolaser (w-165 planetary turbolaser) \nCloaking device (prototype cloak field generator) \nOrbital nightcloak \nPlanetary shields (SLD-26 planetary shield generator) \nSuperlaser \nSun Crusher \nGalaxy Gun"
+          }]
+        }, {
+          "Edit": [{
+            "href": "http://starwars.wikia.com/wiki/The_Essential_Guide_to_Weapons_and_Technology?action=edit&section=5",
+            "text": "Edit"
+          }],
+          "Headline": [{
+            "text": "Sensors and communications"
+          }]
+        }, {
+          "Headline": [{
+            "text": "Starship sensor array (Universal transceiver package and \"Screamer\" active jammer, ANq-51 sensor array computer, Txs-431 flight control console) \nCom-scan (OrC-19 com-scan integrator console) \nElectrotelescope (VXI-3 electrotelescope) \nPortable scanner (EnhanceScan general-purpose scanner) \nSensor tag (SureSnoop sensor tag) \nSensor beacon (SE-Vigilant automated sensor beacon) \nSensor jammers (4x-Phantom short-range sensor jammer, 220-SIG tactical combat jammer) \nHoming beacon (XXt-26 S-thread tracker) \nComlinks (C1 personal comlink, 3-MAL personal comlink, PAC20 visual wrist comm) \nCybernetic implant comlink/pager (At-cyb husher mike) \nSubspace transceivers (Frequency Agile subspace transceiver) \nHoloNet transceiver (Hologram projection pod)"
+          }]
+        }, {
+          "Edit": [{
+            "href": "http://starwars.wikia.com/wiki/The_Essential_Guide_to_Weapons_and_Technology?action=edit&section=6",
+            "text": "Edit"
+          }],
+          "Headline": [{
+            "text": "Security devices"
+          }]
+        }, {
+          "Headline": [{
+            "text": "Stun cuffs (SC-401 stun cuffs) \nStun nets (RL-40 stun net launcher) \nSlaving collars (Thalassian security collar) \nNerve disruptor (Agonizer-6 nerve disruptor) \nUniversal energy cage \nMan trap (R-TechAp man trap) \nAutomated laser trap (Class VI automated laser projector) \nRank cylinder \nElectronic lock breaker (OutlawTech lock breaker) \nSecurity scanners (57C holocam) \nBioscan (Athakam/RSMA bioscan unit) \nHolographic image disguiser (CQ-3.9x holographic image disguiser) \nMolecularly bonded armor and anticoncussion field (Molecular-bond armor sheath and Rampart-class anticoncussion generator)"
+          }]
+        }, {
+          "Edit": [{
+            "href": "http://starwars.wikia.com/wiki/The_Essential_Guide_to_Weapons_and_Technology?action=edit&section=7",
+            "text": "Edit"
+          }],
+          "Headline": [{
+            "text": "General equipment"
+          }]
+        }, {
+          "Headline": [{
+            "text": "Common hand tools, (F-187 fusioncutter, ReliaCharger power calibrator, FastTurn-3 hydrospanner) \nBreath mask (Roamer-6 breath mask) \nVaporator (GX-8 water vaporator) \nElectrobinoculars (Model TD2.3 electrobinoculars) \nBeamdrill (G2-GE beamdrill) \nGlow rod (Industrial glow rod) \nRecording rod (PersonalAssistant-4x recording rod) \nHarpoon and tow cable (Power harpoon launcher) \nHologram projector (CS-Mark 12 holoprojector) \nJet, rocket, and repulsor packs (Z-6 jetpack) \nMedpac (FastFlesh medpac, GLiS emergency medpac) \nBacta tank \nRemote (Marksman-H combat remote) \nSeeker (Mark VII Inquisitor seeker) \nDatapad (Companion2000 datapad) \nCyborg unit (Borg Construct Aj^6) \nCarbon-freezing chamber (Class three carbon-freezing chamber) \nHolocron (Jedi holocron) \nSsi-ruuvi Entechment Rig \nOrganic gill \nMagwit's Mystifying Hoop \nInfrared motion sensor (NiteSite infrared motion sensor)"
+          }]
+        }, {
+          "Edit": [{
+            "href": "http://starwars.wikia.com/wiki/The_Essential_Guide_to_Weapons_and_Technology?action=edit&section=8",
+            "text": "Edit"
+          }]
+        }]
+      }]
+    },
+    "pageData": {
+      "statusCode": 200,
+      "timestamp": 1527115377961
+    },
+    "timestamp": 1527115377961,
+    "sequenceNumber": 0
+  }
+}
