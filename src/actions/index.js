@@ -44,11 +44,11 @@ export function fetchCharacters() {
       gender: 'male',
       eye_color: 'red',
       stats:{
-        STR: 0,
-        DEX: 0,
-        CON: 3,
-        WIS: 4,
-        CHA: 2
+        'STR': 0,
+        'DEX': 0,
+        'CON': 3,
+        'WIS': 4,
+        'CHA': 2
       },
   },
   {
@@ -61,11 +61,11 @@ export function fetchCharacters() {
       gender: 'female',
       eye_color: 'blue',
       stats:{
-        STR: 0,
-        DEX: 0,
-        CON: 3,
-        WIS: 4,
-        CHA: 2
+        'STR': 0,
+        'DEX': 0,
+        'CON': 3,
+        'WIS': 4,
+        'CHA': 2
   },
   }]
     console.log(request)
