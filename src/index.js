@@ -7,7 +7,9 @@ import promise from "redux-promise";
 import reducers from "./reducers";
 
 import PeopleList from './components/people-list';
-import personShow from './components/person-show';
+import PersonShow from './components/person-show';
+import CharacterList from './components/character-list';
+import CharacterShow from './components/character-show';
 
 import './index.css'
 import 'bootstrap/dist/css/bootstrap.css'
@@ -23,7 +25,10 @@ const Header = () => (
       <div className = "row">
 
     <Link to={`/peopleList`}>
-      <p className = "header-option px-3">People</p>
+      <h2 className = "header-option px-3">People</h2>
+    </Link>
+    <Link to={`/characterList`}>
+      <h2 className = "header-option px-3">Characters</h2>
     </Link>
     <div className="text-center">
       <h2 className ="text-white"> Star P G </h2>
@@ -37,10 +42,19 @@ const Header = () => (
 const Main = () => (
     <Switch>
       <Route exact path='/' component={Home}/>
-      <Route exact path='/peopleList' component={PeopleList}/>
-      <Route exact path='/peopleList/person' component={personShow}/>
-
+      <Route exact path='/peopleList/person' component={PersonShow}/>
+      <Route exact path='/peopleList/person' component={CharacterShow}/>
     </Switch>
+)
+
+const SideNav = () => (
+  <div className="side-nav bg-dark pt-1">
+  <Switch>
+    <Route exact path='/peopleList' component={PeopleList}/>
+    <Route exact path='/characterList' component={CharacterList}/>
+  </Switch>
+
+  </div>
 )
 
 const Home = () => (
@@ -53,6 +67,7 @@ ReactDOM.render(
       <div>
         <Header />
         <Main />
+        <SideNav />
       </div>
     </BrowserRouter>
   </Provider>,
