@@ -3,6 +3,8 @@ import { reducer as formReducer } from "redux-form";
 import ListsReducer from "./reducer-lists";
 import OptionsReducer from "./reducer-lists";
 import SpeciesAttr from "../data/specie_attrs.js";
+import OptionsReducer from "./reducer-options.js";
+
 
 
 const rootReducer = combineReducers({

@@ -4,10 +4,12 @@ import { FETCH_SPECIES, FETCH_PLANETS, FETCH_VEHICLES, FETCH_STARSHIPS } from ".
 export default function(state = {}, action) {
   switch (action.type) {
     case FETCH_SPECIES:
-      return _.mapKeys(action.payload.data, "id");
+      console.log('SUCCESS')
+      console.log(action.payload.data)
+      return action.payload.data
 
     case FETCH_PLANETS:
-      return _.mapKeys(action.payload.data, "id");
+      return action.payload.data
 
     case FETCH_VEHICLES:
       return _.mapKeys(action.payload.data, "id");
