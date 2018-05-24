@@ -1,5 +1,5 @@
 import _ from "lodash";
-import { FETCH_PEOPLE, FETCH_CHARACTERS, FETCH PERSON } from "../actions";
+import { FETCH_PEOPLE, FETCH_CHARACTERS, FETCH_PERSON } from "../actions";
 
 export default function(state = {}, action) {
   switch (action.type) {
