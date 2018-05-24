@@ -19,7 +19,9 @@ class PersonShow extends Component {
 
   render() {
     // TODO: render person details
-    return
+    return(
+      <div className="text-center"> A PERSON </div>
+    )
   }
 }
 

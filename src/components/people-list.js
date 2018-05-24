@@ -18,7 +18,18 @@ class PeopleList extends Component {
   }
 
   renderPeople() {
-    // TODO: render a link to each person.
+    /* renders a list of each person */
+    return _.map(this.props.people, person => {
+      return (
+        <li className="list-group-item bg-dark" key={person.id}>
+          <Link className="text-white" to={`/peopleList/${person.id}`}>
+            {person.name}
+          </Link>
+        </li>
+      );
+    });
+
+    console.log(this.props.people)
   }
 
   render() {
@@ -28,16 +39,9 @@ class PeopleList extends Component {
       <div>
         <div className="text-xs-right">
         </div>
-        <h3 className='text-white text-center py-2'>People</h3>
+        <h3 className='text-yellow text-center py-2'>People</h3>
         <ul className="list-group text-center">
-        {/* TODO: below should call renderPeople() to render each person */}
-          <div className='text-white'>
-            <li className="py-1">  Person </li>
-            <li className="py-1">  Person </li>
-            <li className="py-1">  Person </li>
-            <li className="py-1">  Person </li>
-            <li className="py-1">  Person </li>
-          </div>
+          {this.renderPeople()}
         </ul>
       </div>
     )
@@ -45,8 +49,7 @@ class PeopleList extends Component {
 }
 
 function mapStateToProps(state) {
-  console.log(state)
-// TODO:
+  return {people: state.people};
 }
 
 function mapDispatchToProps(dispatch) {

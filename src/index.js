@@ -25,14 +25,14 @@ const Header = () => (
       <div className = "row">
 
     <Link to={`/peopleList`}>
-      <h2 className = "header-option px-3">People</h2>
+      <h2 className = "header-option px-3 text-yellow">People</h2>
     </Link>
     <Link to={`/characterList`}>
-      <h2 className = "header-option px-3">Characters</h2>
+      <h2 className = "header-option px-3 text-yellow">Characters</h2>
     </Link>
     <div className="text-center">
-      <h2 className ="text-white"> Star P G </h2>
-      <p className ="text-white"> by Hew, Ilona, & Davis </p>
+      <h2 className ="text-yellow"> Star P G </h2>
+      <p className ="text-yellow"> by Hew, Ilona, & Davis </p>
     </div>
       </div>
     </header>
@@ -42,15 +42,15 @@ const Header = () => (
 const Main = () => (
     <Switch>
       <Route exact path='/' component={Home}/>
-      <Route exact path='/peopleList/person' component={PersonShow}/>
-      <Route exact path='/peopleList/person' component={CharacterShow}/>
+      <Route exact path='/peopleList/:id' component={PersonShow}/>
+      <Route exact path='/characterList/:d' component={CharacterShow}/>
     </Switch>
 )
 
 const SideNav = () => (
   <div className="side-nav bg-dark pt-1">
   <Switch>
-    <Route exact path='/peopleList' component={PeopleList}/>
+    <Route path='/peopleList' component={PeopleList}/>
     <Route exact path='/characterList' component={CharacterList}/>
   </Switch>
 
