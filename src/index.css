@@ -32,6 +32,10 @@
   object-fit: cover;
 }
 
+.text-yellow{
+  color: yellow !important;
+}
+
 .default-img{
   height: 175px;
   width: 175px;
