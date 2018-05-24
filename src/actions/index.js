@@ -15,6 +15,11 @@ export function fetchStarWarsPeople() {
   };
 }
 
+// TODO: creat export function fetchCharacters() {}
+
+
+
+
 // TODO: somehow, fetchStarWarsPeople needs to store it's payload in the state. When do we need the Google API to fetch? I don't know what the image data looks like.
 
 

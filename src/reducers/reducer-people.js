@@ -10,3 +10,6 @@ export default function(state = {}, action) {
       return state;
   }
 }
+// TODO: add case FETCH_CHARACTERS
+
+// TODO: rename reducer-people.js to something that encompasses both people and characters

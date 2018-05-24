@@ -23,7 +23,7 @@ const Header = () => (
       <div className = "row">
 
     <Link to={`/peopleList`}>
-      <a className = "header-option px-3">People</a>
+      <p className = "header-option px-3">People</p>
     </Link>
     <div className="text-center">
       <h2 className ="text-white"> Star P G </h2>
