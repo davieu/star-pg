@@ -3,10 +3,11 @@ import axios from "axios";
 export const FETCH_PEOPLE = "fetch_people";
 
 // TODO: get root url
-const ROOT_SWAPI_URL = "https://swapi.co/api/people/";
+const ROOT_SWAPI_URL = "https://swapi.co/api";
 
 export function fetchStarWarsPeople() {
-  const request = axios.get(`${ROOT_SWAPI_URL}`)
+  const request = axios.get(`${ROOT_SWAPI_URL}/people/`)
+  console.log(request)
 
   return {
     type: FETCH_PEOPLE,
