@@ -1,4 +1,7 @@
-const specie_attrs = {[
+import React, { Component } from "react";
+
+const SpeciesAttr = {
+  species:[
   {
   species: "Hutt",
   attrs: {
@@ -6,9 +9,10 @@ const specie_attrs = {[
     DEX: -1,
     CON: 4,
     WIS: 1,
-    CHA: 2,
+    CHA: 2
     }
   },
+  {
   species: "Yoda's Species",
   attrs: {
     STR: 0,
@@ -18,6 +22,7 @@ const specie_attrs = {[
     CHA: 2
     }
   },
+  {
   species: "Trandoshan",
   attrs: {
     STR: 3,
@@ -27,6 +32,7 @@ const specie_attrs = {[
     CHA: 0
     }
   },
+  {
   species: "Mon Calamari",
   attrs: {
     STR: 3,
@@ -36,6 +42,7 @@ const specie_attrs = {[
     CHA: 1
     }
   },
+  {
   species: "Ewok",
   attrs: {
     STR: 0,
@@ -45,6 +52,7 @@ const specie_attrs = {[
     CHA: 2
     }
   },
+  {
   species: "Sullustan",
   attrs: {
     STR: 2,
@@ -56,4 +64,4 @@ const specie_attrs = {[
   }
 ]}
 
-export default specie_attrs;
+export default SpeciesAttr;

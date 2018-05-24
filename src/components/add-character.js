@@ -6,7 +6,7 @@ import { bindActionCreators } from "redux";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
-import { fetchSpecies, fetchPlanets } from "../actions";
+import { fetchSpecies, fetchPlanets, fetchStarships, fetchVehicles } from "../actions";
 
 
 class AddCharacter extends Component {
@@ -45,6 +45,16 @@ class AddCharacter extends Component {
     this.state.current_option = 'homePlanet'
   }
 
+  viewVehicles = () => {
+    this.props.fetchVehicles()
+    this.state.current_option = 'vehicle'
+  }
+
+  viewStarships = () => {
+    this.props.fetchStarships()
+    this.state.current_option = 'starship'
+  }
+
   optionsHandler = (e) => {
     let current_option = (this.state.current_option)
 
@@ -65,6 +75,12 @@ class AddCharacter extends Component {
 
         <button onClick={this.viewPlanets}
         className="btn m-1"> {this.state.homePlanet} </button>
+
+        <button onClick={this.viewVehicles}
+        className="btn m-1"> {this.state.vehicle} </button>
+
+        <button onClick={this.viewStarships}
+        className="btn m-1"> {this.state.starShip} </button>
 
         <button className="btn m-1"> {this.state.vehicle} </button>
         <button className="btn m-1"> {this.state.starship} </button>
@@ -115,7 +131,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({fetchSpecies, fetchPlanets}, dispatch);
+  return bindActionCreators({fetchSpecies, fetchPlanets, fetchVehicles, fetchStarships}, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddCharacter);

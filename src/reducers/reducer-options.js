@@ -9,13 +9,13 @@ export default function(state = {}, action) {
       return action.payload.data
 
     case FETCH_PLANETS:
-      return action.payload.data
+      return action.payload.data;
 
     case FETCH_VEHICLES:
-      return _.mapKeys(action.payload.data, "id");
+      return action.payload.data;
 
     case FETCH_STARSHIPS:
-      return _.mapKeys(action.payload.data, "id");
+      return action.payload.data;
 
     default:
       return state;
