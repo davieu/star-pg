@@ -2,6 +2,16 @@
   margin: auto;
 }
 
+.side-nav {
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  top:80px;
+  overflow-y: auto;
+  width: 200px
+}
+
 .center{
   margin: auto;
 }

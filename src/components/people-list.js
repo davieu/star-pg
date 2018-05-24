@@ -25,12 +25,27 @@ class PeopleList extends Component {
     console.log(this.props)
     // TODO: render DOM that will contain an element that calls renderPeople().
     return(
-      <div>peopleList</div>
+      <div>
+        <div className="text-xs-right">
+        </div>
+        <h3 className='text-white text-center py-2'>People</h3>
+        <ul className="list-group text-center">
+        {/* TODO: below should call renderPeople() to render each person */}
+          <div className='text-white'>
+            <li className="py-1">  Person </li>
+            <li className="py-1">  Person </li>
+            <li className="py-1">  Person </li>
+            <li className="py-1">  Person </li>
+            <li className="py-1">  Person </li>
+          </div>
+        </ul>
+      </div>
     )
   }
 }
 
 function mapStateToProps(state) {
+  console.log(state)
 // TODO:
 }
 
