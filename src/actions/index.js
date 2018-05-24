@@ -43,10 +43,9 @@ export function fetchCharacters() {
   };
 }
 
-//action for species planet vehicles starships
-
+//action for getting species planet vehicles starships below
 export function fetchSpecies() {
-  const request = axios.get(`${ROOT_SWAPI_URL}/starships/`)
+  const request = axios.get(`${ROOT_SWAPI_URL}/species/`)
   console.log(request)
 
   return {
