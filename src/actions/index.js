@@ -1,8 +1,8 @@
 import axios from "axios";
 
 export const FETCH_PEOPLE = "fetch_people";
+export const FETCH_CHARACTERS = "fetch_characters";
 
-// TODO: get root url
 const ROOT_SWAPI_URL = "https://swapi.co/api";
 
 export function fetchStarWarsPeople() {
@@ -15,8 +15,16 @@ export function fetchStarWarsPeople() {
   };
 }
 
-// TODO: creat export function fetchCharacters() {}
+// TODO: Finish this fetchCharacter function 'test'
+export function fetchCharacters() {
+  const request = {text:'test'}
+    console.log(request)
 
+  return {
+    type: FETCH_CHARACTERS,
+    payload: request
+  };
+}
 
 
 
