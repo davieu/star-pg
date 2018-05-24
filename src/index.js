@@ -10,6 +10,7 @@ import PeopleList from './components/people-list';
 import PersonShow from './components/person-show';
 import CharacterList from './components/character-list';
 import CharacterShow from './components/character-show';
+import AddCharacter from './components/add-character';
 
 import './index.css'
 import 'bootstrap/dist/css/bootstrap.css'
@@ -40,11 +41,14 @@ const Header = () => (
 )
 
 const Main = () => (
+  <div className="main-padding"> 
     <Switch>
       <Route exact path='/' component={Home}/>
       <Route exact path='/peopleList/:id' component={PersonShow}/>
       <Route exact path='/characterList/:d' component={CharacterShow}/>
+      <Route exact path='/addCharacter' component={AddCharacter}/>
     </Switch>
+  </div>
 )
 
 const SideNav = () => (

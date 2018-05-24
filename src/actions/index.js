@@ -9,8 +9,8 @@ export const FETCH_CHARACTERS = "fetch_characters";
 
 const ROOT_SWAPI_URL = "https://swapi.co/api";
 
-export function fetchStarWarsPeople() {
-  const request = axios.get(`${ROOT_SWAPI_URL}/people/`)
+export function fetchStarWarsPeople(page) {
+  const request = axios.get(`${ROOT_SWAPI_URL}/people/?page=${page}`)
   console.log(request)
 
   return {
