@@ -9,11 +9,31 @@ import { fetchStarWarsPeople } from "../actions"
 // TODO: People List could be a pop-out side nav-bar or just a view when you click 'PEOPLE' in the header
 class PeopleList extends Component {
   constructor(props) {
-    super()
+    super(props)
+    this.state = props
+    this.page = 1
   }
 
   componentDidMount() {
-    this.props.fetchStarWarsPeople()
+    this.props.fetchStarWarsPeople(1)
+    // TODO: fetch people from SWAPI
+  }
+
+  nextPage() {
+    if(this.page<9){
+      this.page++
+      this.state.fetchStarWarsPeople(this.page)
+    }
+
+    // TODO: fetch people from SWAPI
+  }
+
+  previousPage() {
+    if(this.page>1){
+      this.page--
+      this.state.fetchStarWarsPeople(this.page)
+    }
+
     // TODO: fetch people from SWAPI
   }
 
@@ -28,12 +48,9 @@ class PeopleList extends Component {
         </li>
       );
     });
-
-    console.log(this.props.people)
   }
 
   render() {
-    console.log(this.props)
     // TODO: render DOM that will contain an element that calls renderPeople().
     return(
       <div>
@@ -43,6 +60,12 @@ class PeopleList extends Component {
         <ul className="list-group text-center">
           {this.renderPeople()}
         </ul>
+        <div className="container">
+          <div className="row">
+            <button onClick={this.previousPage.bind(this)} className="left btn">Previous</button>
+            <button onClick={this.nextPage.bind(this)} className="right btn">Next</button>
+          </div>
+        </div>
       </div>
     )
   }

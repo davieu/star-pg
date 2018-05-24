@@ -25,7 +25,7 @@ class CharacterList extends Component {
     return(
       <div>
         <div className="text-xs-right">
-          <Link className="btn btn-primary" to="/posts/new">
+          <Link className="btn btn-primary" to="/addCharacter">
             Build New Character
           </Link>
         </div>
