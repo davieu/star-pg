@@ -5,21 +5,24 @@ import React, { Component } from "react";
 
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+import { fetchStarWarsPerson } from "../actions" //TODO: make sure this is the right function name
 
 class PersonShow extends Component {
   constructor(props) {
-    super()
+    super(props);
 
   }
 
   componentDidMount() {
-    // TODO: fetch people from SWAPI
+    this.props.fetchStarWarsPerson(this.props.match.params.id);
   }
 
 
   render() {
-    // TODO: render person details
-    return
+    console.log(this.props);
+    return(
+      <div>Person</div>
+    )
   }
 }
 
