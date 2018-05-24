@@ -5,7 +5,10 @@ import axios from "axios";
 export const FETCH_PEOPLE = "fetch_people";
 export const FETCH_PERSON = "fetch_person";
 export const FETCH_CHARACTERS = "fetch_characters";
-
+export const FETCH_SPECIES = "fetch_species";
+export const FETCH_PLANETS = "fetch_planets";
+export const FETCH_VEHICLES = "fetch_vehicles";
+export const FETCH_STARSHIPS = "fetch_starships";
 
 const ROOT_SWAPI_URL = "https://swapi.co/api";
 
@@ -40,6 +43,47 @@ export function fetchCharacters() {
   };
 }
 
+//action for species planet vehicles starships
+
+export function fetchSpecies() {
+  const request = axios.get(`${ROOT_SWAPI_URL}/starships/`)
+  console.log(request)
+
+  return {
+    type: FETCH_SPECIES,
+    payload: request
+  };
+}
+
+export function fetchPlanets() {
+  const request = axios.get(`${ROOT_SWAPI_URL}/planets/`)
+  console.log(request)
+
+  return {
+    type: FETCH_PLANETS,
+    payload: request
+  };
+}
+
+export function fetchVehicles() {
+  const request = axios.get(`${ROOT_SWAPI_URL}/vehicles/`)
+  console.log(request)
+
+  return {
+    type: FETCH_VEHICLES,
+    payload: request
+  };
+}
+
+export function fetchStarships() {
+  const request = axios.get(`${ROOT_SWAPI_URL}/starships/`)
+  console.log(request)
+
+  return {
+    type: FETCH_STARSHIPS,
+    payload: request
+  };
+}
 
 
 // TODO: somehow, fetchStarWarsPeople needs to store it's payload in the state. When do we need the Google API to fetch? I don't know what the image data looks like.
