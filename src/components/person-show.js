@@ -14,7 +14,7 @@ class PersonShow extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchStarWarsPerson(this.props.match.params.id);
+    // this.props.fetchStarWarsPerson(this.props.match.params.id);
   }
 
 

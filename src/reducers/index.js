@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 import { reducer as formReducer } from "redux-form";
 import ListsReducer from "./reducer-lists";
-import OptionsReducer from "./reducer-lists";
+import OptionsReducer from "./reducer-options";
 
 
 const rootReducer = combineReducers({
