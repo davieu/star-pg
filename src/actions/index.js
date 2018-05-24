@@ -34,7 +34,40 @@ export function fetchStarWarsPerson(id) {
 
 // TODO: Finish this fetchCharacter function 'test'
 export function fetchCharacters() {
-  const request = {text:'test'}
+  const request = [{
+    id: '101',
+      species: 'Ewok',
+      homePlanet: 'Tatooine',
+      vehicle: 'TIE bomber',
+      starship: 'Executor',
+      occupation: 'Animal trainer',
+      gender: 'male',
+      eye_color: 'red',
+      stats:{
+        STR: 0,
+        DEX: 0,
+        CON: 3,
+        WIS: 4,
+        CHA: 2
+      },
+  },
+  {
+    id: '101',
+      species: 'Trandoshan',
+      homePlanet: 'Alderaan',
+      vehicle: 'Sand Crawler',
+      starship: 'Death Star',
+      occupation: 'Code dealer',
+      gender: 'female',
+      eye_color: 'blue',
+      stats:{
+        STR: 0,
+        DEX: 0,
+        CON: 3,
+        WIS: 4,
+        CHA: 2
+  },
+  }]
     console.log(request)
 
   return {
