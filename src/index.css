@@ -2,6 +2,31 @@
   margin: auto;
 }
 
+.right{
+  position: absolute;
+  right: 10px
+}
+
+.left{
+  position: absolute;
+  left: 10px
+}
+
+.main-padding{
+  padding-left: 250px;
+  padding-top: 50px
+}
+
+.side-nav {
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  top:80px;
+  overflow-y: auto;
+  width: 200px
+}
+
 .center{
   margin: auto;
 }
@@ -20,6 +45,10 @@
   height: 45px;
   width: 45px;
   object-fit: cover;
+}
+
+.text-yellow{
+  color: yellow !important;
 }
 
 .default-img{

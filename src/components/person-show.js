@@ -19,9 +19,10 @@ class PersonShow extends Component {
 
 
   render() {
-    console.log(this.props);
+
+    // TODO: render person details
     return(
-      <div>Person</div>
+      <div className="text-center"> A PERSON </div>
     )
   }
 }

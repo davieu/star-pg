@@ -22,7 +22,25 @@ class CharacterList extends Component {
 
   render() {
     // TODO: render DOM that will contain an element that calls renderCharacters().
-    return
+    return(
+      <div>
+        <div className="text-xs-right">
+          <Link className="btn btn-primary" to="/addCharacter">
+            Build New Character
+          </Link>
+        </div>
+        <h3 className='text-white text-center py-2'>Characters</h3>
+        <ul className="list-group text-center">
+        {/* TODO: below should call renderCharacters() to render each person */}
+          <div className='text-white'>
+            <li className="py-1">  Character </li>
+            <li className="py-1">  Character </li>
+            <li className="py-1">  Character </li>
+            <li className="py-1">  Character </li>
+          </div>
+        </ul>
+      </div>
+    )
   }
 }
 

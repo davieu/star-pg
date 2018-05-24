@@ -7,7 +7,10 @@ import promise from "redux-promise";
 import reducers from "./reducers";
 
 import PeopleList from './components/people-list';
-import personShow from './components/person-show';
+import PersonShow from './components/person-show';
+import CharacterList from './components/character-list';
+import CharacterShow from './components/character-show';
+import AddCharacter from './components/add-character';
 
 import './index.css'
 import 'bootstrap/dist/css/bootstrap.css'
@@ -23,11 +26,14 @@ const Header = () => (
       <div className = "row">
 
     <Link to={`/peopleList`}>
-      <p className = "header-option px-3">People</p>
+      <h2 className = "header-option px-3 text-yellow">People</h2>
+    </Link>
+    <Link to={`/characterList`}>
+      <h2 className = "header-option px-3 text-yellow">Characters</h2>
     </Link>
     <div className="text-center">
-      <h2 className ="text-white"> Star P G </h2>
-      <p className ="text-white"> by Hew, Ilona, & Davis </p>
+      <h2 className ="text-yellow"> Star P G </h2>
+      <p className ="text-yellow"> by Hew, Ilona, & Davis </p>
     </div>
       </div>
     </header>
@@ -35,12 +41,24 @@ const Header = () => (
 )
 
 const Main = () => (
+  <div className="main-padding"> 
     <Switch>
       <Route exact path='/' component={Home}/>
-      <Route exact path='/peopleList' component={PeopleList}/>
-      <Route exact path='/peopleList/person' component={personShow}/>
-
+      <Route exact path='/peopleList/:id' component={PersonShow}/>
+      <Route exact path='/characterList/:d' component={CharacterShow}/>
+      <Route exact path='/addCharacter' component={AddCharacter}/>
     </Switch>
+  </div>
+)
+
+const SideNav = () => (
+  <div className="side-nav bg-dark pt-1">
+  <Switch>
+    <Route path='/peopleList' component={PeopleList}/>
+    <Route exact path='/characterList' component={CharacterList}/>
+  </Switch>
+
+  </div>
 )
 
 const Home = () => (
@@ -53,6 +71,7 @@ ReactDOM.render(
       <div>
         <Header />
         <Main />
+        <SideNav />
       </div>
     </BrowserRouter>
   </Provider>,
