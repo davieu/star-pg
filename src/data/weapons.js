@@ -1,5 +1,6 @@
-const weapons = {
-  "Section": [{
+const Weapons = {
+  "Section": [
+    {
       "type": "Ranged weapons",
       "weapons": ["Blasters (DH-17 blaster pistol)",
         "Blaster rifle (E-11 blaster rifle)",
@@ -15,9 +16,7 @@ const weapons = {
         "Sonic pistol (Sd-77 sonic pistol, Sg-82 sonic rifle)",
         "Wrist rockets (MM9 rocket system)",
         "Stokhli spray stick",
-        "Projectile weapons (Oriolanis Striker Projectile Pistol,
-        Dressellian projectile rifle)
-      ",
+        "Projectile weapons (Oriolanis Striker Projectile Pistol, Dressellian projectile rifle)",
       "Flame projector (C-22 flame carbine, CR-24 flame rifle, ZX miniature flame projector)",
       "Dart shooter (Stealth-2VX palm shooter, PRP-502 hold-out dart shooter)",
       "Flechette launcher (FWG-5 flechette pistol, FC-1 flechette launcher)",
@@ -132,4 +131,4 @@ const weapons = {
   }]
 }
 
-export default weapons;
+export default Weapons;
