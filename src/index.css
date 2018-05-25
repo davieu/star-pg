@@ -35,6 +35,12 @@
   margin: auto;
 }
 
+.bottom{
+  position: absolute;
+  bottom: 0;
+  right: 15px
+}
+
 .floating-box{
   position: fixed; /* could be absolute */
   top: 0; left: 0px; bottom: 0; right: 0;
@@ -53,6 +59,7 @@
 
 .text-yellow{
   color: yellow !important;
+  font-family: serif;
 }
 
 .default-img{
