@@ -374,4 +374,8 @@ const SpeciesAttr = {
     }
     },
 ]}
+<<<<<<< HEAD
 export default SpeciesAttr;
+=======
+export default SpeciesAttr;
+>>>>>>> c120efd4f70a60df7a6a9182f2fa82f6ca3ebb4d
