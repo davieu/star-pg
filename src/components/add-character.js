@@ -7,9 +7,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import axios from "axios";
 
-
-import { fetchSpecies, fetchAllSpecies, fetchPlanets, fetchStarships, fetchVehicles, fetchOccupations, fetchWeapons } from "../actions";
-
+import { fetchSpecies, fetchAllSpecies, fetchPlanets, fetchAllPlanets, fetchStarships, fetchAllStarships, fetchVehicles, fetchAllVehicles, fetchOccupations, fetchWeapons } from "../actions";
 
 
 class AddCharacter extends Component {
@@ -45,19 +43,19 @@ class AddCharacter extends Component {
   }
 
   viewPlanets = () => {
-    this.props.fetchPlanets()
+    this.props.fetchAllPlanets()
     console.log('tick')
     this.setState({current_option : 'homePlanet'})
   }
 
   viewVehicles = () => {
 
-    this.props.fetchVehicles()
+    this.props.fetchAllVehicles()
     this.state.current_option = 'vehicle'
   }
 
   viewStarships = () => {
-    this.props.fetchStarships()
+    this.props.fetchAllStarships()
     this.state.current_option = 'starship'
   }
 
@@ -218,9 +216,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-
-  return bindActionCreators({fetchSpecies, fetchAllSpecies, fetchPlanets, fetchVehicles, fetchStarships, fetchWeapons, fetchOccupations}, dispatch);
-
+  return bindActionCreators({fetchSpecies, fetchAllSpecies, fetchPlanets, fetchAllPlanets, fetchVehicles, fetchAllVehicles, fetchStarships, fetchAllStarships, fetchWeapons, fetchOccupations}, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddCharacter);

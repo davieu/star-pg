@@ -150,8 +150,8 @@ export function fetchAllSpecies() {
     })
   }
 
-  export function fetchPlanets() {
-    const request = axios.get(`${ROOT_SWAPI_URL}/planets/`)
+  export function fetchPlanets(page) {
+    const request = axios.get(`${ROOT_SWAPI_URL}/planets/?page=${page}`)
     console.log(request)
 
     return {
@@ -160,8 +160,24 @@ export function fetchAllSpecies() {
     };
   }
 
-  export function fetchVehicles() {
-    const request = axios.get(`${ROOT_SWAPI_URL}/vehicles/`)
+  export function fetchAllPlanets() {
+    return (function(dispatch){
+      Promise.all([
+        dispatch(fetchPlanets(1)),
+        dispatch(fetchPlanets(2)),
+        dispatch(fetchPlanets(3)),
+        dispatch(fetchPlanets(4)),
+        dispatch(fetchPlanets(5)),
+        dispatch(fetchPlanets(6)),
+        dispatch(fetchPlanets(7))
+      ]).then(function(result){
+
+      })
+    })
+  }
+
+  export function fetchVehicles(page) {
+    const request = axios.get(`${ROOT_SWAPI_URL}/vehicles/?page=${page}`)
     console.log(request)
 
     return {
@@ -170,8 +186,21 @@ export function fetchAllSpecies() {
     };
   }
 
-  export function fetchStarships() {
-    const request = axios.get(`${ROOT_SWAPI_URL}/starships/`)
+  export function fetchAllVehicles() {
+    return (function(dispatch){
+      Promise.all([
+      dispatch(fetchVehicles(1)),
+      dispatch(fetchVehicles(2)),
+      dispatch(fetchVehicles(3)),
+      dispatch(fetchVehicles(4))
+    ]).then(function(results){});
+    }
+
+    )
+  }
+
+  export function fetchStarships(page) {
+    const request = axios.get(`${ROOT_SWAPI_URL}/starships/?page=${page}`)
     console.log(request)
 
 
@@ -179,6 +208,19 @@ export function fetchAllSpecies() {
       type: FETCH_STARSHIPS,
       payload: request
     };
+  }
+
+  export function fetchAllStarships() {
+    return (function(dispatch){
+      Promise.all([
+      dispatch(fetchStarships(1)),
+      dispatch(fetchStarships(2)),
+      dispatch(fetchStarships(3)),
+      dispatch(fetchStarships(4))
+    ]).then(function(results){});
+    }
+
+    )
   }
 
   export function fetchOccupations() {
