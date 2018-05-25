@@ -4,18 +4,26 @@ import { Link } from "react-router-dom";
 
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { fetchStarWarsPeople } from "../actions"
+import { fetchStarWarsPeople, fetchAllStarWarsPeople } from "../actions"
 
 // TODO: People List could be a pop-out side nav-bar or just a view when you click 'PEOPLE' in the header
 class PeopleList extends Component {
   constructor(props) {
     super(props)
+    console.log("People List props");
+    console.log(props);
+    this.props.fetchAllStarWarsPeople()
     this.state = props
     this.page = 1
+
+  }
+
+  componentWillMount() {
+    //this.props.fetchAllStarWarsPeople();
   }
 
   componentDidMount() {
-    this.props.fetchStarWarsPeople(1)
+    //this.props.fetchAllStarWarsPeople()
   }
 
   nextPage() {
@@ -50,16 +58,20 @@ class PeopleList extends Component {
   }
 
   render() {
-    console.log(this.props.people.length)
-    console.log(this.props.people.count)
+    console.log("people.length ="+this.props.people.length)
 
     if(this.props.people.length<87){
-      // console.log('next')
-      // console.log(this.props.people)
-      this.nextPage()
+        return (
+          <div>
+            <div className="text-xs-right">
+            </div>
+            <h3 className='text-yellow text-center py-2'>People</h3>
+            <div className="text-white">Loading...</div>
+          </div>
+        )
     }
 
-    // TODO: render DOM that will contain an element that calls renderPeople().
+    //render DOM that contains an element that calls renderPeople().
     return(
       <div>
         <div className="text-xs-right">
@@ -88,7 +100,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({fetchStarWarsPeople}, dispatch);
+  return bindActionCreators({fetchStarWarsPeople, fetchAllStarWarsPeople}, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PeopleList);

@@ -5,6 +5,7 @@ import { createStore, applyMiddleware } from "redux";
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 import promise from "redux-promise";
 import reducers from "./reducers";
+import thunk from "redux-thunk";
 
 import PeopleList from './components/people-list';
 import PersonShow from './components/person-show';
@@ -16,7 +17,7 @@ import './index.css'
 import 'bootstrap/dist/css/bootstrap.css'
 
 
-const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
+const createStoreWithMiddleware = applyMiddleware(promise, thunk)(createStore);
 
 
 
@@ -41,7 +42,7 @@ const Header = () => (
 )
 
 const Main = () => (
-  <div className="main-padding"> 
+  <div className="main-padding">
     <Switch>
       <Route exact path='/' component={Home}/>
       <Route exact path='/peopleList/:id' component={PersonShow}/>
