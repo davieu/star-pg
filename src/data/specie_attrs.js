@@ -351,9 +351,9 @@ const SpeciesAttr = {
       CON: 3,
       WIS: 0,
       CHA: 0
-      }
-      },
-      {
+    }
+    },
+    {
     species: "Kaleesh",
     attrs: {
       STR: 2,
@@ -361,9 +361,9 @@ const SpeciesAttr = {
       CON: 3,
       WIS: 1,
       CHA: 1
-      }
-      },
-      {
+    }
+    },
+    {
     species: "Togruta",
     attrs: {
       STR: 1,
@@ -371,9 +371,9 @@ const SpeciesAttr = {
       CON: 2,
       WIS: 1,
       CHA: 1
-      }
-      },
-      {
+    }
+    },
+    {
 ]}
 
 export default SpeciesAttr;
