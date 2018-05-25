@@ -10,8 +10,16 @@ export const FETCH_SPECIES = "fetch_species";
 export const FETCH_PLANETS = "fetch_planets";
 export const FETCH_VEHICLES = "fetch_vehicles";
 export const FETCH_STARSHIPS = "fetch_starships";
+export const FETCH_WEAPONS = "fetch_weapons";
 
 const ROOT_SWAPI_URL = "https://swapi.co/api";
+
+export function fetchWeapons(){
+  console.log('STEP 1')
+  return {
+    type: FETCH_WEAPONS,
+  };
+}
 
 export function fetchStarWarsPeople(page){
   const request = axios.get(`${ROOT_SWAPI_URL}/people/?page=${page}`)

@@ -5,8 +5,9 @@ import { Field, reduxForm } from "redux-form";
 import { bindActionCreators } from "redux";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import axios from "axios";
 
-import { fetchSpecies, fetchPlanets, fetchStarships, fetchVehicles } from "../actions";
+import { fetchSpecies, fetchPlanets, fetchStarships, fetchVehicles, fetchWeapons } from "../actions";
 
 
 class AddCharacter extends Component {
@@ -36,7 +37,7 @@ class AddCharacter extends Component {
   }
 
   viewSpecies = () => {
-    console.log('species TICK')
+
     this.props.fetchSpecies()
     this.setState({current_option : 'species'})
   }
@@ -48,6 +49,7 @@ class AddCharacter extends Component {
   }
 
   viewVehicles = () => {
+
     this.props.fetchVehicles()
     this.state.current_option = 'vehicle'
   }
@@ -55,6 +57,11 @@ class AddCharacter extends Component {
   viewStarships = () => {
     this.props.fetchStarships()
     this.state.current_option = 'starship'
+  }
+
+  viewWeapons = () => {
+    this.props.fetchWeapons()
+    this.state.current_option = 'weapon'
   }
 
   optionsHandler = (e) => {
@@ -105,7 +112,9 @@ class AddCharacter extends Component {
             > Starship </button>
             <p className="text-center text-yellow">{this.state.starship}</p>
 
-            <button className="btn m-1"> Weapon </button>
+            <button onClick={this.viewWeapons}
+            className={(!this.state.weapon) ? 'btn m-1 ':'btn-secondary btn m-1 '}
+            > Weapon </button>
             <p className="text-center text-yellow">{this.state.weapon}</p>
 
             <button className="btn m-1"> Occupation </button>
@@ -136,9 +145,7 @@ class AddCharacter extends Component {
 
 class OptionsList extends Component {
   render(){
-    // console.log('list tick')
-    // console.log(this.props)
-    // console.log(this.props)
+    console.log(this.props)
     if (!this.props.options){
       return(
         <div> none </div>
@@ -168,7 +175,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({fetchSpecies, fetchPlanets, fetchVehicles, fetchStarships}, dispatch);
+  return bindActionCreators({fetchSpecies, fetchPlanets, fetchVehicles, fetchStarships, fetchWeapons}, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddCharacter);

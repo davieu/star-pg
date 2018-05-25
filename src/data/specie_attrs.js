@@ -1,8 +1,8 @@
 import React, {
   Component
 } from "react";
-
 const SpeciesAttr = {
+  results: {}
   species: [{
       species: "Hutt",
       attrs: {
@@ -374,5 +374,4 @@ const SpeciesAttr = {
     }
     },
 ]}
-
 export default SpeciesAttr;

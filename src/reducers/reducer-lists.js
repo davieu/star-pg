@@ -8,12 +8,12 @@ export default function(state = {}, action) {
     case FETCH_PEOPLE:
 
     let data = []
-    console.log(Object.keys(state).length)
-    console.log(state)
-    console.log('XXXXXXX')
-    console.log(action)
-    console.log(action.payload)
-    console.log(action.payload.data)
+    // console.log(Object.keys(state).length)
+    // console.log(state)
+    // console.log('XXXXXXX')
+    // console.log(action)
+    // console.log(action.payload)
+    // console.log(action.payload.data)
     action.payload.data.results.forEach(function(item, index){
       if(Object.keys(state).length>0){
         item.id = index+Object.keys(state).length
@@ -22,8 +22,8 @@ export default function(state = {}, action) {
       }
       data.push(item)
     })
-    console.log('DATA')
-    console.log(data)
+    // console.log('DATA')
+    // console.log(data)
     let newData = _.mapKeys(data, "id")
 
     let newState = Object.assign({}, state, newData)
@@ -31,8 +31,8 @@ export default function(state = {}, action) {
     let newestState = data.concat(Object.keys(state).length==0 ? {count: action.payload.data.count}: state)
 
     newState.count = action.payload.data.count
-    console.log(newState)
-    console.log(newestState)
+    // console.log(newState)
+    // console.log(newestState)
     // console.log(newData)
 
 
