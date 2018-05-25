@@ -7,6 +7,9 @@ export default function(state = [], action) {
   let data = [];
   let newestState;
   switch (action.type) {
+    case FETCH_STARSHIPS:
+    case FETCH_VEHICLES:
+    case FETCH_PLANETS:
     case FETCH_SPECIES:
       console.log('SUCCESS')
       console.log(action.payload.data);
@@ -31,22 +34,9 @@ export default function(state = [], action) {
       if (newestState.length == newestState.count) {
         newestState = _.mapKeys(newestState, "id")
       }
-      console.log ({count: newestState.count,
-      result: newestState
-      });
+      console.log("newestState:")
+      console.log (newestState);
       return newestState;
-
-
-    case FETCH_PLANETS:
-      return action.payload.data;
-
-    case FETCH_VEHICLES:
-      console.log(state)
-      console.log(action.payload.data)
-      return action.payload.data;
-
-    case FETCH_STARSHIPS:
-      return action.payload.data;
 
     case FETCH_WEAPONS:
       console.log(state)
