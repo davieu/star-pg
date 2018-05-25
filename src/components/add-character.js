@@ -72,9 +72,6 @@ class AddCharacter extends Component {
 
   render() {
 
-    console.log('RE-RENDERED')
-    // console.log(this.props)
-    // console.log(this.state.species)
     return(
       <div className = "container box-center py-3 my-3 border border-dark bg-dark">
         <div className="row">
@@ -146,10 +143,10 @@ class AddCharacter extends Component {
 
 class OptionsList extends Component {
   render(){
-    console.log(this.props)
+
     if (!this.props.options){
       return(
-        <div>  </div>
+        <div className="text-yellow"> Loading... </div>
       )
     }
     return _.map(this.props.options, option => {

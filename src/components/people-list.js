@@ -48,6 +48,7 @@ class PeopleList extends Component {
   renderPeople() {
     /* renders a list of each person */
     return _.map(this.props.people, person => {
+
       return (
         <li className="list-group-item bg-dark" key={person.id}>
           <Link className="text-white" to={`/peopleList/${person.id}`}>
@@ -59,8 +60,7 @@ class PeopleList extends Component {
   }
 
   render() {
-
-    if(this.props.people.length<87){
+    if(this.props.people.length<this.props.people.count){
         return (
           <div>
             <div className="text-xs-right">
