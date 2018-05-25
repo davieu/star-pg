@@ -52,11 +52,13 @@ class PeopleList extends Component {
   render() {
     console.log(this.props.people.length)
     console.log(this.props.people.count)
+
     if(this.props.people.length<87){
-      console.log('next')
-      console.log(this.props.people)
+      // console.log('next')
+      // console.log(this.props.people)
       this.nextPage()
     }
+
     // TODO: render DOM that will contain an element that calls renderPeople().
     return(
       <div>

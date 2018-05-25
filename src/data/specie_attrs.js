@@ -92,7 +92,8 @@ const SpeciesAttr = {
         WIS: 3,
         CHA: 0
       }
-    }
+    },
+    {
     species: "Dug",
     attrs: {
       STR: 2,
@@ -102,7 +103,7 @@ const SpeciesAttr = {
       CHA: 0
     }
   },
-}
+{
 species: "Human",
 attrs: {
   STR: 2,
@@ -112,7 +113,7 @@ attrs: {
   CHA: 3
 }
 },
-}
+{
 species: "Droid",
 attrs: {
   STR: 0,
@@ -122,7 +123,7 @@ attrs: {
   CHA: 0
 }
 },
-}
+{
 species: "Wookiee",
 attrs: {
   STR: 4,
@@ -132,7 +133,7 @@ attrs: {
   CHA: -1
 }
 },
-}
+{
 species: "Rodian",
 attrs: {
   STR: 2,
@@ -142,7 +143,7 @@ attrs: {
   CHA: 0
 }
 },
-}
+{
 species: "Twi'lek",
 attrs: {
   STR: 2,
