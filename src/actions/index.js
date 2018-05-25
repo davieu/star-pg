@@ -11,6 +11,7 @@ export const FETCH_PLANETS = "fetch_planets";
 export const FETCH_VEHICLES = "fetch_vehicles";
 export const FETCH_STARSHIPS = "fetch_starships";
 export const FETCH_WEAPONS = "fetch_weapons";
+export const FETCH_OCCUPATIONS = "fetch_occupations";
 
 const ROOT_SWAPI_URL = "https://swapi.co/api";
 
@@ -21,7 +22,16 @@ export function fetchWeapons() {
   };
 }
 
-export function fetchStarWarsPeople(page) {
+
+export function fetchOccupations(){
+  console.log('STEP 1')
+  return {
+    type: FETCH_OCCUPATIONS,
+  };
+}
+
+export function fetchStarWarsPeople(page){
+
 
   const request = axios.get(`${ROOT_SWAPI_URL}/people/?page=${page}`)
   console.log(request)
@@ -164,6 +174,7 @@ export function fetchAllSpecies() {
     const request = axios.get(`${ROOT_SWAPI_URL}/starships/`)
     console.log(request)
 
+
     return {
       type: FETCH_STARSHIPS,
       payload: request
@@ -182,6 +193,7 @@ export function fetchAllSpecies() {
 
 
   // TODO: somehow, fetchStarWarsPeople needs to store it's payload in the state. When do we need the Google API to fetch? I don't know what the image data looks like.
+
 
 
   // TODO: payload needs to go to Google API to find images
