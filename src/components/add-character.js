@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import axios from "axios";
 
-import { fetchSpecies, fetchPlanets, fetchStarships, fetchVehicles, fetchWeapons } from "../actions";
+import { fetchSpecies, fetchAllSpecies, fetchPlanets, fetchStarships, fetchVehicles, fetchWeapons } from "../actions";
 
 
 class AddCharacter extends Component {
@@ -38,7 +38,7 @@ class AddCharacter extends Component {
 
   viewSpecies = () => {
 
-    this.props.fetchSpecies()
+    this.props.fetchAllSpecies();
     this.setState({current_option : 'species'})
   }
 
@@ -66,7 +66,6 @@ class AddCharacter extends Component {
 
   optionsHandler = (e) => {
     let current_option = (this.state.current_option)
-
     this.setState({[current_option]: e.target.value})
   }
 
@@ -173,7 +172,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({fetchSpecies, fetchPlanets, fetchVehicles, fetchStarships, fetchWeapons}, dispatch);
+  return bindActionCreators({fetchSpecies, fetchAllSpecies, fetchPlanets, fetchVehicles, fetchStarships, fetchWeapons}, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddCharacter);
