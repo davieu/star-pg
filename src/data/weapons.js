@@ -1,8 +1,52 @@
-const Weapons = {[
-    "E-11 blaster rifle",
-    "DL-44 heavy blaster pistol",
-    "Defender sporting blaster",
-    "T-21 light repeating blaster",
+const SpeciesAttr = {
+  results: [{
+        species: "Hutt",
+        attrs: {
+          STR: 0,
+          DEX: -1,
+          CON: 4,
+          WIS: 1,
+          CHA: 2
+        }
+        },
+const Weapons = {
+  results:[
+    {
+      name: "E-11 blaster rifle"
+    },
+    {
+      name: "DL-44 heavy blaster pistol"
+    },
+    {
+      name: 'Defender sporting blaster',
+    },
+    {
+      name: 'T-21 light repeating blaster',
+    },
+    {
+      name: '',
+    },
+    {
+      name: '',
+    },
+    {
+      name: '',
+    },
+    {
+      name: '',
+    },
+    {
+      name: '',
+    },
+
+  ]}
+
+
+
+
+
+    "",
+    "",
     "E-Web repeating blaster",
     "Jawa ionization blaster",
     "Bowcaster",
@@ -10,9 +54,6 @@ const Weapons = {[
     "Ssi-ruuvi paddle beamer",
     "DXR-6 disruptor rifle",
     "Sg-82 sonic rifle",
-  ]
-}
-      
 
       "Wrist rockets (MM9 rocket system)",
       "Stokhli spray stick",
