@@ -17,39 +17,47 @@ class CharacterList extends Component {
   }
 
   renderCharacters() {
-    // TODO: render a link to each person.
+    return _.map(this.props.people, person => {
+
+      return (
+        <li className="list-group-item bg-dark" key={1}>
+          <Link className="text-white" to={`/peopleList/1`}>
+            {person.name}
+          </Link>
+        </li>
+      );
+    });
   }
 
   render() {
     // TODO: render DOM that will contain an element that calls renderCharacters().
     return(
       <div>
-        <div className="text-xs-right">
-          <Link className="btn btn-primary" to="/addCharacter">
-            Build New Character
-          </Link>
-        </div>
-        <h3 className='text-white text-center py-2'>Characters</h3>
+      <div className="text-xs-right">
+        <Link className="btn btn-primary" to="/addCharacter">
+          Build New Character
+        </Link>
+      </div>
+        <h3 className='text-yellow text-center py-2'>Characters</h3>
         <ul className="list-group text-center">
-        {/* TODO: below should call renderCharacters() to render each person */}
-          <div className='text-white'>
-            <li className="py-1">  Character </li>
-            <li className="py-1">  Character </li>
-            <li className="py-1">  Character </li>
-            <li className="py-1">  Character </li>
-          </div>
+          {this.renderCharacters()}
+
         </ul>
+
+        <div className="bottom-padding">
+
+        </div>
       </div>
     )
   }
 }
 
 function mapStateToProps(state) {
-// TODO:
+  return {people: state.people};
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({/* TODO: */ }, dispatch);
-}
+// function mapDispatchToProps(dispatch) {
+//   return bindActionCreators({/* TODO: */ }, dispatch);
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CharacterList);
+export default connect(mapStateToProps)(CharacterList);

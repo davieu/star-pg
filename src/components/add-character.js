@@ -7,7 +7,9 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import axios from "axios";
 
-import { fetchSpecies, fetchPlanets, fetchStarships, fetchVehicles, fetchWeapons, fetchOccupations } from "../actions";
+
+import { fetchSpecies, fetchAllSpecies, fetchPlanets, fetchStarships, fetchVehicles, fetchOccupations, fetchWeapons, emptyOptions, submitCharacter } from "../actions";
+
 
 
 class AddCharacter extends Component {
@@ -32,13 +34,13 @@ class AddCharacter extends Component {
 
   }
 //add the contact by executing a function
-  addNewCharacter = () => {
-
+  submitCharacter = () => {
+    this.props.submitCharacter(this.state)
   }
 
   viewSpecies = () => {
-
-    this.props.fetchSpecies()
+    this.props.emptyOptions()
+    this.props.fetchAllSpecies();
     this.setState({current_option : 'species'})
   }
 
@@ -71,25 +73,27 @@ class AddCharacter extends Component {
 
   optionsHandler = (e) => {
     let current_option = (this.state.current_option)
-    console.log(this.props.options.results)
-    console.log(e.target.value)
-    let stateAttr =this.props.options.results.find(function(element) {
-      return element.name == e.target.value
-    });
 
-    console.log(stateAttr)
+
+    // let stateAttr =this.props.options.find(function(element) {
+    //   return element.name == e.target.value
+    // });
+    let stateAttr = (this.props.options[e.target.value])
+
+    // console.log(stateAttr)
 
     this.setState({[current_option]: stateAttr})
+
   }
 
   render() {
-
+    console.log(this.props)
     return(
       <div className = "container box-center py-3 my-3 border border-dark bg-dark">
         <div className="row">
 
           <div className="col-sm-3">
-          {console.log(!this.state.species)}
+
 
 
 
@@ -118,10 +122,12 @@ class AddCharacter extends Component {
             > Weapon </button>
             <p className="mx-1 text-yellow">{this.state.weapon.name}</p>
 
+
             <button onClick={this.viewOccupations}
             className={(!this.state.occupation.name) ? 'btn mx-1 ':'btn-secondary btn mx-1 '}
             > Occupation </button>
             <p className="mx-1 text-yellow">{this.state.occupation.name}</p>
+
 
 
           </div>
@@ -150,7 +156,7 @@ class AddCharacter extends Component {
 
             <h5 className="text-yellow">Choose an eye color for your character</h5>
             <input className="form-group input-group"
-            value={this.state.gender}
+            value={this.state.species.eye_color}
             onChange={event => {
               let eye_color = event.target.value;
               //filter out all non-letter characters
@@ -163,14 +169,15 @@ class AddCharacter extends Component {
 
           </div>
           <div className="col-sm-3">
-            <button className="btn bottom"> Submit Character </button>
+            <button onClick={this.submitCharacter}
+            className="btn bottom"> Submit Character </button>
           </div>
         </div>
         <div className="row">
           <div className="col-sm-12">
             <h5 className="text-yellow text-center">Please choose your {this.state.current_option}</h5>
             <div className="row">
-              <OptionsList optionsHandler = {this.optionsHandler} options={this.props.options.results} state={this.state}/>
+              <OptionsList optionsHandler = {this.optionsHandler} options={this.props.options} state={this.state}/>
             </div>
           </div>
         </div>
@@ -185,16 +192,19 @@ class AddCharacter extends Component {
 }
 
 class OptionsList extends Component {
-  render(){
 
+  render(){
+    console.log(this.props)
     if (!this.props.options){
       return(
         <div className="text-yellow"> Loading... </div>
       )
     }
     return _.map(this.props.options, option => {
-      console.log(this.props.state.current_option)
+
+      console.log(option)
       let stateAttribute = this.props.state[this.props.state.current_option].name
+      // console.log(stateAttribute)
       return (
 
           <div className="m-1">
@@ -202,7 +212,7 @@ class OptionsList extends Component {
             <button
             className ={(stateAttribute == option.name) ? 'btn-warning':''}
             onClick ={this.props.optionsHandler}
-            value={option.name}>{option.name}</button>
+            value={option.id}>{option.name}</button>
           </div>
 
       );
@@ -213,11 +223,14 @@ class OptionsList extends Component {
 
 // export default AddCharacter
 function mapStateToProps(state) {
-  return {options: state.options};
+  return {options: state.options,
+          people: state.people};
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({fetchSpecies, fetchPlanets, fetchVehicles, fetchStarships, fetchWeapons, fetchOccupations}, dispatch);
+
+  return bindActionCreators({fetchSpecies, fetchAllSpecies, fetchPlanets, fetchVehicles, fetchStarships, fetchWeapons, fetchOccupations, emptyOptions, submitCharacter}, dispatch);
+
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddCharacter);

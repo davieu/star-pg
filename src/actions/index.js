@@ -12,15 +12,20 @@ export const FETCH_VEHICLES = "fetch_vehicles";
 export const FETCH_STARSHIPS = "fetch_starships";
 export const FETCH_WEAPONS = "fetch_weapons";
 export const FETCH_OCCUPATIONS = "fetch_occupations";
+export const EMPTY_OPTIONS = "empty_options";
+export const SUBMIT_CHARACTER = "submit_character";
+
+
 
 const ROOT_SWAPI_URL = "https://swapi.co/api";
 
-export function fetchWeapons(){
+export function fetchWeapons() {
   console.log('STEP 1')
   return {
     type: FETCH_WEAPONS,
   };
 }
+
 
 export function fetchOccupations(){
   console.log('STEP 1')
@@ -30,6 +35,7 @@ export function fetchOccupations(){
 }
 
 export function fetchStarWarsPeople(page){
+
 
   const request = axios.get(`${ROOT_SWAPI_URL}/people/?page=${page}`)
   console.log(request)
@@ -42,20 +48,8 @@ export function fetchStarWarsPeople(page){
   };
 }
 
-export function fetchStarWarsPerson(id) {
-  const request = axios.get(`${ROOT_SWAPI_URL}/people/${id}/`)
-  console.log(request)
-
-  return {
-    type: FETCH_PERSON,
-    payload: request
-  };
-}
-
 export function fetchAllStarWarsPeople() {
-  console.log("Fetching All Star Wars People")
   return (function(dispatch) {
-    console.log("fetchAllStarWarsPeople callback");
     Promise.all([
       dispatch(fetchStarWarsPeople(1)),
       dispatch(fetchStarWarsPeople(2)),
@@ -66,15 +60,24 @@ export function fetchAllStarWarsPeople() {
       dispatch(fetchStarWarsPeople(7)),
       dispatch(fetchStarWarsPeople(8)),
       dispatch(fetchStarWarsPeople(9))
-    ]).then(function(results){
-      console.log("promise completed");
+    ]).then(function(results) {
       let data = [];
-      results.forEach(function(result){
-        data=data.concat(result.payload.data.results);
+      results.forEach(function(result) {
+        data = data.concat(result.payload.data.results);
       });
     });
-    })
-  }
+  })
+}
+
+export function fetchStarWarsPerson(id) {
+  const request = axios.get(`${ROOT_SWAPI_URL}/people/${id}/`)
+  console.log(request)
+
+  return {
+    type: FETCH_PERSON,
+    payload: request
+  };
+}
 
 
 
@@ -125,8 +128,8 @@ export function fetchCharacters() {
 }
 
 //action for getting species planet vehicles starships below
-export function fetchSpecies() {
-  const request = axios.get(`${ROOT_SWAPI_URL}/species/`)
+export function fetchSpecies(page) {
+  const request = axios.get(`${ROOT_SWAPI_URL}/species/?page=${page}`);
   console.log(request)
   console.log('fetch tick')
   return {
@@ -135,37 +138,74 @@ export function fetchSpecies() {
   };
 }
 
-export function fetchPlanets() {
-  const request = axios.get(`${ROOT_SWAPI_URL}/planets/`)
-  console.log(request)
+export function fetchAllSpecies() {
+  return (function(dispatch) {
+    Promise.all([
+      dispatch(fetchSpecies(1)),
+      dispatch(fetchSpecies(2)),
+      dispatch(fetchSpecies(3)),
+      dispatch(fetchSpecies(4))
+    ]).then(function(results) {
+        let data = [];
+        results.forEach(function(result) {
+          data = data.concat(result.payload.results);
+        });
+      })
+    })
+  }
 
-  return {
-    type: FETCH_PLANETS,
-    payload: request
-  };
-}
+  export function fetchPlanets() {
+    const request = axios.get(`${ROOT_SWAPI_URL}/planets/`)
+    console.log(request)
 
-export function fetchVehicles() {
-  const request = axios.get(`${ROOT_SWAPI_URL}/vehicles/`)
-  console.log(request)
+    return {
+      type: FETCH_PLANETS,
+      payload: request
+    };
+  }
 
-  return {
-    type: FETCH_VEHICLES,
-    payload: request
-  };
-}
+  export function fetchVehicles() {
+    const request = axios.get(`${ROOT_SWAPI_URL}/vehicles/`)
+    console.log(request)
 
-export function fetchStarships() {
-  const request = axios.get(`${ROOT_SWAPI_URL}/starships/`)
-  console.log(request)
+    return {
+      type: FETCH_VEHICLES,
+      payload: request
+    };
+  }
 
-  return {
-    type: FETCH_STARSHIPS,
-    payload: request
-  };
-}
-
-// TODO: somehow, fetchStarWarsPeople needs to store it's payload in the state. When do we need the Google API to fetch? I don't know what the image data looks like.
+  export function fetchStarships() {
+    const request = axios.get(`${ROOT_SWAPI_URL}/starships/`)
+    console.log(request)
 
 
-// TODO: payload needs to go to Google API to find images
+    return {
+      type: FETCH_STARSHIPS,
+      payload: request
+    };
+  }
+
+  export function emptyOptions() {
+    return{
+      type: EMPTY_OPTIONS
+    }
+  }
+
+  export function submitCharacter(data) {
+    return{
+      payload: data,
+      type: SUBMIT_CHARACTER
+    }
+  }
+
+
+
+
+
+
+
+  // TODO: somehow, fetchStarWarsPeople needs to store it's payload in the state. When do we need the Google API to fetch? I don't know what the image data looks like.
+
+
+
+  // TODO: payload needs to go to Google API to find images
