@@ -12,13 +12,15 @@ export const FETCH_STARSHIPS = "fetch_starships";
 
 const ROOT_SWAPI_URL = "https://swapi.co/api";
 
-export function fetchStarWarsPeople(page) {
+export function fetchStarWarsPeople(page){
   const request = axios.get(`${ROOT_SWAPI_URL}/people/?page=${page}`)
   console.log(request)
 
   return {
     type: FETCH_PEOPLE,
-    payload: request
+    // page: 1,
+    payload: request,
+
   };
 }
 

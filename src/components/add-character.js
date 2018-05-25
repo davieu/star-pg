@@ -36,13 +36,13 @@ class AddCharacter extends Component {
 
   viewSpecies = () => {
     this.props.fetchSpecies()
-    this.state.current_option = 'species'
+    this.setState({current_option : 'species'})
   }
 
   viewPlanets = () => {
     this.props.fetchPlanets()
     console.log('tick')
-    this.state.current_option = 'homePlanet'
+    this.setState({current_option : 'homePlanet'})
   }
 
   optionsHandler = (e) => {
