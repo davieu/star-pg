@@ -17,6 +17,10 @@
   padding-top: 50px
 }
 
+.bottom-padding{
+  height:300px
+}
+
 .side-nav {
   height: 100vh;
   position: fixed;

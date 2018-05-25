@@ -16,7 +16,6 @@ class PeopleList extends Component {
 
   componentDidMount() {
     this.props.fetchStarWarsPeople(1)
-    // TODO: fetch people from SWAPI
   }
 
   nextPage() {
@@ -51,6 +50,13 @@ class PeopleList extends Component {
   }
 
   render() {
+    console.log(this.props.people.length)
+    console.log(this.props.people.count)
+    if(this.props.people.length<87){
+      console.log('next')
+      console.log(this.props.people)
+      this.nextPage()
+    }
     // TODO: render DOM that will contain an element that calls renderPeople().
     return(
       <div>
@@ -59,12 +65,16 @@ class PeopleList extends Component {
         <h3 className='text-yellow text-center py-2'>People</h3>
         <ul className="list-group text-center">
           {this.renderPeople()}
+
         </ul>
         <div className="container">
           <div className="row">
             <button onClick={this.previousPage.bind(this)} className="left btn">Previous</button>
             <button onClick={this.nextPage.bind(this)} className="right btn">Next</button>
           </div>
+        </div>
+        <div className="bottom-padding">
+        .
         </div>
       </div>
     )
