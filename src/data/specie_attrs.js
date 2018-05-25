@@ -373,7 +373,6 @@ const SpeciesAttr = {
       CHA: 1
     }
     },
-    {
 ]}
 
 export default SpeciesAttr;
