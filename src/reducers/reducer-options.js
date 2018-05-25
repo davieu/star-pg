@@ -1,5 +1,8 @@
 import _ from "lodash";
-import { FETCH_SPECIES, FETCH_PLANETS, FETCH_VEHICLES, FETCH_STARSHIPS, FETCH_WEAPONS } from "../actions";
+
+import { FETCH_SPECIES, FETCH_PLANETS, FETCH_VEHICLES, FETCH_STARSHIPS, FETCH_WEAPONS, FETCH_OCCUPATIONS } from "../actions";
+import Weapons from "../data/weapons";
+import Occupations from "../data/occupations";
 
 import SpeciesAttr from "../data/specie_attrs";
 
@@ -39,13 +42,14 @@ export default function(state = [], action) {
       return newestState;
 
     case FETCH_WEAPONS:
-      console.log(state)
-      console.log('STEP 2')
-      console.log(SpeciesAttr)
-      return SpeciesAttr;
+      return Weapons;
+
+    case FETCH_OCCUPATIONS:
+      return Occupations;
+
+
 
     default:
       return state;
   }
-  return state
 }
