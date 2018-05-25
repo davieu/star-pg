@@ -35,6 +35,7 @@ class AddCharacter extends Component {
   }
 
   viewSpecies = () => {
+    console.log('species TICK')
     this.props.fetchSpecies()
     this.state.current_option = 'species'
   }
@@ -80,10 +81,8 @@ class AddCharacter extends Component {
         className="btn m-1"> {this.state.vehicle} </button>
 
         <button onClick={this.viewStarships}
-        className="btn m-1"> {this.state.starShip} </button>
+        className="btn m-1"> {this.state.starship} </button>
 
-        <button className="btn m-1"> {this.state.vehicle} </button>
-        <button className="btn m-1"> {this.state.starship} </button>
         <button className="btn m-1"> {this.state.weapon} </button>
         <button className="btn m-1"> {this.state.occupation} </button>
         <button className="btn m-1"> {this.state.gender} </button>

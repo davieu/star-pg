@@ -1,4 +1,5 @@
 import axios from "axios";
+import SpeciesAttr from "../data/specie_attrs";
 
 //fetch people/person gets set people from swapi api example: 'Luke Skywalker'
 //fetch character gets the info for the create your own characters
@@ -80,7 +81,7 @@ export function fetchCharacters() {
 export function fetchSpecies() {
   const request = axios.get(`${ROOT_SWAPI_URL}/species/`)
   console.log(request)
-
+  console.log('fetch tick')
   return {
     type: FETCH_SPECIES,
     payload: request
@@ -108,6 +109,16 @@ export function fetchVehicles() {
 }
 
 export function fetchStarships() {
+  const request = axios.get(`${ROOT_SWAPI_URL}/starships/`)
+  console.log(request)
+
+  return {
+    type: FETCH_STARSHIPS,
+    payload: request
+  };
+}
+
+export function fetchOccupations() {
   const request = axios.get(`${ROOT_SWAPI_URL}/starships/`)
   console.log(request)
 
