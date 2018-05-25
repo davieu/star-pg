@@ -22,6 +22,7 @@ export function fetchWeapons(){
 }
 
 export function fetchStarWarsPeople(page){
+
   const request = axios.get(`${ROOT_SWAPI_URL}/people/?page=${page}`)
   console.log(request)
 
@@ -43,10 +44,37 @@ export function fetchStarWarsPerson(id) {
   };
 }
 
+export function fetchAllStarWarsPeople() {
+  console.log("Fetching All Star Wars People")
+  return (function(dispatch) {
+    console.log("fetchAllStarWarsPeople callback");
+    Promise.all([
+      dispatch(fetchStarWarsPeople(1)),
+      dispatch(fetchStarWarsPeople(2)),
+      dispatch(fetchStarWarsPeople(3)),
+      dispatch(fetchStarWarsPeople(4)),
+      dispatch(fetchStarWarsPeople(5)),
+      dispatch(fetchStarWarsPeople(6)),
+      dispatch(fetchStarWarsPeople(7)),
+      dispatch(fetchStarWarsPeople(8)),
+      dispatch(fetchStarWarsPeople(9))
+    ]).then(function(results){
+      console.log("promise completed");
+      let data = [];
+      results.forEach(function(result){
+        data=data.concat(result.payload.data.results);
+      });
+    });
+    })
+  }
+
+
+
+
 // TODO: Finish this fetchCharacter function 'test'
 export function fetchCharacters() {
   const request = [{
-    id: '101',
+      id: '101',
       species: 'Ewok',
       homePlanet: 'Tatooine',
       vehicle: 'TIE bomber',
@@ -54,16 +82,16 @@ export function fetchCharacters() {
       occupation: 'Animal trainer',
       gender: 'male',
       eye_color: 'red',
-      stats:{
+      stats: {
         'STR': 0,
         'DEX': 0,
         'CON': 3,
         'WIS': 4,
         'CHA': 2
       },
-  },
-  {
-    id: '101',
+    },
+    {
+      id: '101',
       species: 'Trandoshan',
       homePlanet: 'Alderaan',
       vehicle: 'Sand Crawler',
@@ -71,15 +99,16 @@ export function fetchCharacters() {
       occupation: 'Code dealer',
       gender: 'female',
       eye_color: 'blue',
-      stats:{
+      stats: {
         'STR': 0,
         'DEX': 0,
         'CON': 3,
         'WIS': 4,
         'CHA': 2
-  },
-  }]
-    console.log(request)
+      },
+    }
+  ]
+  console.log(request)
 
   return {
     type: FETCH_CHARACTERS,

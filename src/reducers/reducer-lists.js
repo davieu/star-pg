@@ -1,12 +1,15 @@
 import _ from "lodash";
-import { FETCH_PEOPLE, FETCH_CHARACTERS, FETCH_PERSON } from "../actions";
+import {
+  FETCH_PEOPLE,
+  FETCH_CHARACTERS,
+  FETCH_PERSON
+} from "../actions";
 
 export default function(state = {}, action) {
   console.log(action)
-  console.log(action.type)
+  //console.log(action.type)
   switch (action.type) {
     case FETCH_PEOPLE:
-
     let data = []
     // console.log(Object.keys(state).length)
     // console.log(state)
