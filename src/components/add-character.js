@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import axios from "axios";
 
-import { fetchSpecies, fetchPlanets, fetchStarships, fetchVehicles, fetchWeapons } from "../actions";
+import { fetchSpecies, fetchPlanets, fetchStarships, fetchVehicles, fetchWeapons, fetchOccupations } from "../actions";
 
 
 class AddCharacter extends Component {
@@ -64,6 +64,11 @@ class AddCharacter extends Component {
     this.state.current_option = 'weapon'
   }
 
+  viewOccupations = () => {
+    this.props.fetchOccupations()
+    this.state.current_option = 'occupation'
+  }
+
   optionsHandler = (e) => {
     let current_option = (this.state.current_option)
 
@@ -114,7 +119,9 @@ class AddCharacter extends Component {
             > Weapon </button>
             <p className="text-center text-yellow">{this.state.weapon}</p>
 
-            <button className="btn m-1"> Occupation </button>
+            <button onClick={this.viewOccupations}
+            className={(!this.state.occupation) ? 'btn m-1 ':'btn-secondary btn m-1 '}
+            > Occupation </button>
             <p className="text-center text-yellow">{this.state.occupation}</p>
 
             <button className="btn m-1"> Gender </button>
@@ -173,7 +180,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({fetchSpecies, fetchPlanets, fetchVehicles, fetchStarships, fetchWeapons}, dispatch);
+  return bindActionCreators({fetchSpecies, fetchPlanets, fetchVehicles, fetchStarships, fetchWeapons, fetchOccupations}, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddCharacter);
