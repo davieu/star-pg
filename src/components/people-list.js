@@ -30,7 +30,7 @@ class PeopleList extends Component {
 
   previousPage() {
     console.log('SUCCESS')
-    const request = axios.get(`https://www.googleapis.com/customsearch/v1?cx=014853649748397840475:echk55sah1u&key=AIzaSyAUzOTVv4IQrpjKymg_aWMsxQBudJDomqY&fileType=jpg,png,svg&q=LukeSkywalker`)
+    const request = axios.get(`https://www.googleapis.com/customsearch/v1?cx=014853649748397840475:echk55sah1u&key=AIzaSyAUzOTVv4IQrpjKymg_aWMsxQBudJDomqY&fileType=jpg&q=female ewok athlete`)
       .then(function (response) {
         console.log(response);
       })

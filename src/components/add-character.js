@@ -128,6 +128,7 @@ class AddCharacter extends Component {
 
           </div>
           <div className="col-sm-10">
+            <h5 className="text-yellow">Please choose your {this.state.current_option}</h5>
             <div className="row">
               <OptionsList optionsHandler = {this.optionsHandler} options={this.props.options.results} state={this.state}/>
             </div>
@@ -148,14 +149,14 @@ class OptionsList extends Component {
     console.log(this.props)
     if (!this.props.options){
       return(
-        <div> none </div>
+        <div>  </div>
       )
     }
     return _.map(this.props.options, option => {
       let stateAttribute = this.props.state[this.props.state.current_option]
       return (
 
-          <div>
+          <div className="m-1">
 
             <button
             className ={(stateAttribute == option.name) ? 'btn-warning':''}
