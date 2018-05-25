@@ -1,6 +1,7 @@
 import _ from "lodash";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
@@ -36,12 +37,12 @@ class PeopleList extends Component {
   }
 
   previousPage() {
-    if(this.page>1){
-      this.page--
-      this.state.fetchStarWarsPeople(this.page)
-    }
-
-    // TODO: fetch people from SWAPI
+    console.log('SUCCESS')
+    const request = axios.get(`https://www.googleapis.com/customsearch/v1?cx=014853649748397840475:echk55sah1u&key=AIzaSyAUzOTVv4IQrpjKymg_aWMsxQBudJDomqY&fileType=jpg,png,svg&q=LukeSkywalker`)
+      .then(function (response) {
+        console.log(response);
+      })
+    console.log(request)
   }
 
   renderPeople() {
@@ -58,7 +59,6 @@ class PeopleList extends Component {
   }
 
   render() {
-    console.log("people.length ="+this.props.people.length)
 
     if(this.props.people.length<87){
         return (

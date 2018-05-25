@@ -1,23 +1,63 @@
-const weapons = {
-  "Section": [{
-      "type": "Ranged weapons",
-      "weapons": ["Blasters (DH-17 blaster pistol)",
-        "Blaster rifle (E-11 blaster rifle)",
-        "Heavy blaster pistol (DL-44 heavy blaster pistol)",
-        "Sporting blaster (Defender sporting blaster)",
-        "Light repeating blaster (T-21 light repeating blaster)",
-        "E-Web repeating blaster",
-        "Jawa ionization blaster",
-        "Bowcaster",
-        "Beam tube (Emperor-4 beam tube)",
-        "Ssi-ruuvi paddle beamer",
-        "Disruptor (DX-2 disruptor pistol, DXR-6 disruptor rifle)",
-        "Sonic pistol (Sd-77 sonic pistol, Sg-82 sonic rifle)",
-        "Wrist rockets (MM9 rocket system)",
-        "Stokhli spray stick",
-        "Projectile weapons (Oriolanis Striker Projectile Pistol,
-        Dressellian projectile rifle)
-      ",
+const SpeciesAttr = {
+  results: [{
+        species: "Hutt",
+        attrs: {
+          STR: 0,
+          DEX: -1,
+          CON: 4,
+          WIS: 1,
+          CHA: 2
+        }
+        },
+const Weapons = {
+  results:[
+    {
+      name: "E-11 blaster rifle"
+    },
+    {
+      name: "DL-44 heavy blaster pistol"
+    },
+    {
+      name: 'Defender sporting blaster',
+    },
+    {
+      name: 'T-21 light repeating blaster',
+    },
+    {
+      name: '',
+    },
+    {
+      name: '',
+    },
+    {
+      name: '',
+    },
+    {
+      name: '',
+    },
+    {
+      name: '',
+    },
+
+  ]}
+
+
+
+
+
+    "",
+    "",
+    "E-Web repeating blaster",
+    "Jawa ionization blaster",
+    "Bowcaster",
+    "Beam tube (Emperor-4 beam tube)",
+    "Ssi-ruuvi paddle beamer",
+    "DXR-6 disruptor rifle",
+    "Sg-82 sonic rifle",
+
+      "Wrist rockets (MM9 rocket system)",
+      "Stokhli spray stick",
+      "Projectile weapons (Oriolanis Striker Projectile Pistol, Dressellian projectile rifle)",
       "Flame projector (C-22 flame carbine, CR-24 flame rifle, ZX miniature flame projector)",
       "Dart shooter (Stealth-2VX palm shooter, PRP-502 hold-out dart shooter)",
       "Flechette launcher (FWG-5 flechette pistol, FC-1 flechette launcher)",
@@ -132,4 +172,4 @@ const weapons = {
   }]
 }
 
-export default weapons;
+export default Weapons;
