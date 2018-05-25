@@ -27,7 +27,7 @@ export default function(state = [], action) {
       console.log(state)
       console.log('STEP 2')
       console.log(SpeciesAttr)
-      return SpeciesAttr
+      return SpeciesAttr;
 
     default:
       return state;
