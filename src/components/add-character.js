@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import axios from "axios";
 
-import { fetchSpecies, fetchPlanets, fetchStarships, fetchVehicles, fetchWeapons } from "../actions";
+import { fetchSpecies, fetchPlanets, fetchStarships, fetchVehicles, fetchWeapons, fetchOccupations } from "../actions";
 
 
 class AddCharacter extends Component {
@@ -64,6 +64,11 @@ class AddCharacter extends Component {
     this.state.current_option = 'weapon'
   }
 
+  viewOccupations = () => {
+    this.props.fetchOccupations()
+    this.state.current_option = 'occupation'
+  }
+
   optionsHandler = (e) => {
     let current_option = (this.state.current_option)
     console.log(this.props.options.results)
@@ -104,20 +109,20 @@ class AddCharacter extends Component {
             <p className="mx-1 text-yellow">{this.state.vehicle.name}</p>
 
             <button onClick={this.viewStarships}
-            className={(!this.state.starship) ? 'btn m-1 ':'btn-secondary btn m-1 '}
+            className={(!this.state.starship.name) ? 'btn mx-1 ':'btn-secondary btn mx-1 '}
             > Starship </button>
             <p className="mx-1 text-yellow">{this.state.starship.name}</p>
 
             <button onClick={this.viewWeapons}
-            className={(!this.state.weapon) ? 'btn m-1 ':'btn-secondary btn m-1 '}
+            className={(!this.state.weapon.name) ? 'btn mx-1 ':'btn-secondary btn mx-1 '}
             > Weapon </button>
-            <p className="mx-1 ">{this.state.weapon}</p>
+            <p className="mx-1 text-yellow">{this.state.weapon.name}</p>
 
-            <button className="btn m-1"> Occupation </button>
-            <p className="mx-1 text-yellow">{this.state.occupation}</p>
+            <button onClick={this.viewOccupations}
+            className={(!this.state.occupation.name) ? 'btn mx-1 ':'btn-secondary btn mx-1 '}
+            > Occupation </button>
+            <p className="mx-1 text-yellow">{this.state.occupation.name}</p>
 
-            <button className="btn m-1"> Eye Color </button>
-            <p className="mx-1 text-yellow">{this.state.eye_color}</p>
 
           </div>
           <div className="col-sm-6">
@@ -144,7 +149,17 @@ class AddCharacter extends Component {
             placeholder="gender"/>
 
             <h5 className="text-yellow">Choose an eye color for your character</h5>
-            <p className="text-yellow">{this.state.species.eye_colors}</p>
+            <input className="form-group input-group"
+            value={this.state.gender}
+            onChange={event => {
+              let eye_color = event.target.value;
+              //filter out all non-letter characters
+              eye_color = eye_color.replace(/[\W\d\s\._\-]+/g, "");
+              this.setState({eye_color: eye_color})
+            }}
+            placeholder={this.state.species.eye_colors}/>
+
+            <p className="text-yellow">expected colors for species: {this.state.species.eye_colors}</p>
 
           </div>
           <div className="col-sm-3">
@@ -202,7 +217,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({fetchSpecies, fetchPlanets, fetchVehicles, fetchStarships, fetchWeapons}, dispatch);
+  return bindActionCreators({fetchSpecies, fetchPlanets, fetchVehicles, fetchStarships, fetchWeapons, fetchOccupations}, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddCharacter);
