@@ -3,6 +3,7 @@ import {
   FETCH_PEOPLE,
   FETCH_CHARACTERS,
   FETCH_PERSON,
+  SUBMIT_CHARACTER
 } from "../actions";
 
 export default function(state = {}, action) {
@@ -41,6 +42,10 @@ export default function(state = {}, action) {
 
     case FETCH_CHARACTERS:
       return _.mapKeys(action.payload.data, "id");
+
+    case SUBMIT_CHARACTER:
+    console.log(action)
+      return [action.payload, ...state]
 
     default:
       return state;

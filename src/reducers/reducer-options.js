@@ -1,6 +1,6 @@
 import _ from "lodash";
 
-import { FETCH_SPECIES, FETCH_PLANETS, FETCH_VEHICLES, FETCH_STARSHIPS, FETCH_WEAPONS, FETCH_OCCUPATIONS } from "../actions";
+import { FETCH_SPECIES, FETCH_PLANETS, FETCH_VEHICLES, FETCH_STARSHIPS, FETCH_WEAPONS, FETCH_OCCUPATIONS, EMPTY_OPTIONS } from "../actions";
 import Weapons from "../data/weapons";
 import Occupations from "../data/occupations";
 
@@ -14,10 +14,10 @@ export default function(state = [], action) {
     case FETCH_VEHICLES:
     case FETCH_PLANETS:
     case FETCH_SPECIES:
-      console.log('SUCCESS')
-      console.log(action.payload.data);
+      // console.log('SUCCESS')
+      // console.log(action.payload.data);
       if(!action.payload.data){
-        return
+        return state
       }
       action.payload.data.results.forEach(function(item, index){
         if (Object.keys(state).length > 0) {
@@ -37,8 +37,7 @@ export default function(state = [], action) {
       if (newestState.length == newestState.count) {
         newestState = _.mapKeys(newestState, "id")
       }
-      console.log("newestState:")
-      console.log (newestState);
+
       return newestState;
 
     case FETCH_WEAPONS:
@@ -47,9 +46,16 @@ export default function(state = [], action) {
     case FETCH_OCCUPATIONS:
       return Occupations;
 
+    case EMPTY_OPTIONS:
+      return [];
+
+
+
+
 
 
     default:
       return state;
   }
+  return state
 }
