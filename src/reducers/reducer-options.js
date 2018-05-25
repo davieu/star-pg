@@ -6,12 +6,9 @@ export default function(state = [], action) {
     case FETCH_SPECIES:
       console.log('SUCCESS')
       console.log(action.payload.data)
-<<<<<<< HEAD
+
       return action.payload.data;
-=======
-      console.log(state)
-      return [ action.payload.data, ...state ]
->>>>>>> 0ff89c406eb2ae6c5b52daefd55096714e01cace
+
 
     case FETCH_PLANETS:
       return action.payload.data;
