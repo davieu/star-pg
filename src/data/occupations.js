@@ -3,286 +3,286 @@ import React, {
 } from "react";
 
 const Occupations = {
-  results:[
-    {
-      name: "Administrator"
+
+    1:{
+      name: "Administrator", id:1
     },
-    {
-      name: "Animal trainer"
+    2:{
+      name: "Animal trainer", id:2
     },
-    {
-      name: "Architect"
+    3:{
+      name: "Architect", id:3
     },
-    {
-      name: "Archivist"
+    4:{
+      name: "Archivist", id:4
     },
-    {
-      name: "Athlete"
+    5:{
+      name: "Athlete", id:5
     },
-    {
-      name: "Attorney General"
+    6:{
+      name: "Attorney General", id:5
     },
-    {
-      name: "Bail bondsman"
+    7:{
+      name: "Bail bondsman", id:5
     },
-    {
-      name: "Beast charmer"
+    8:{
+      name: "Beast charmer", id:5
     },
-    {
-      name: "Beast master"
+    9:{
+      name: "Beast master", id:5
     },
-    {
-      name: "Bioengineering"
+    10:{
+      name: "Bioengineering", id:10
     },
-    {
-      name: "Bookie"
+    11:{
+      name: "Bookie", id:11
     },
-    {
-      name: "Cartographer"
+    12:{
+      name: "Cartographer", id:12
     },
-    {
-      name: "Chronicler"
+    13:{
+      name: "Chronicler", id:13
     },
-    {
-      name: "Code dealer"
+    14:{
+      name: "Code dealer", id:14
     },
-    {
-      name: "Collector"
+    15:{
+      name: "Collector", id:15
     },
-    {
-      name: "Computer linguist"
+    16:{
+      name: "Computer linguist", id:16
     },
-    {
-      name: "Corona sailor"
+    17:{
+      name: "Corona sailor", id:17
     },
-    {
-      name: "Counselor"
+    18:{
+      name: "Counselor", id:18
     },
-    {
-      name: "Crater-buster"
+    19:{
+      name: "Crater-buster", id:19
     },
-    {
-      name: "Cryptologist"
+    20:{
+      name: "Cryptologist", id:20
     },
-    {
-      name: "Cutter"
+    21:{
+      name: "Cutter", id:21
     },
-    {
-      name: "Cyber-strategist"
+    22:{
+      name: "Cyber-strategist", id:22
     },
-    {
-      name: "Deep Hunter"
+    23:{
+      name: "Deep Hunter", id:23
     },
-    {
-      name: "Defender"
+    24:{
+      name: "Defender", id:24
     },
-    {
-      name: "Dishwasher"
+    25:{
+      name: "Dishwasher", id:25
     },
-    {
-      name: "Diver"
+    26:{
+      name: "Diver", id:26
     },
-    {
-      name: "DJ"
+    27:{
+      name: "DJ", id:27
     },
-    {
-      name: "Docking controller"
+    28:{
+      name: "Docking controller", id:28
     },
-    {
-      name: "First contact specialist"
+    29:{
+      name: "First contact specialist", id:29
     },
-    {
-      name: "Fixer"
+    30:{
+      name: "Fixer", id:30
     },
-    {
-      name: "Flight controller"
+    31:{
+      name: "Flight controller", id:31
     },
-    {
-      name: "Flight instructor"
+    32:{
+      name: "Flight instructor", id:32
     },
-    {
-      name: "Force hunter"
+    33:{
+      name: "Force hunter", id:33
     },
-    {
-      name: "Gambler"
+    34:{
+      name: "Gambler", id:34
     },
-    {
-      name: "Gatherer"
+    35:{
+      name: "Gatherer", id:35
     },
-    {
-      name: "Gladiator"
+    36:{
+      name: "Gladiator", id:36
     },
-    {
-      name: "Harbor controlle"
+    37:{
+      name: "Harbor controlle", id:37
     },
-    {
-      name: "Herbalist"
+    38:{
+      name: "Herbalist", id:38
     },
-    {
-      name: "Hermit"
+    39:{
+      name: "Hermit", id:39
     },
-    {
-      name: "Historian"
+    40:{
+      name: "Historian", id:40
     },
-    {
-      name: "Hot zone transport pilot"
+    41:{
+      name: "Hot zone transport pilot", id:41
     },
-    {
-      name: "Hunt saboteur"
+    42:{
+      name: "Hunt saboteur", id:42
     },
-    {
-      name: "Hyperspace surveyor"
+    43:{
+      name: "Hyperspace surveyor", id:43
     },
-    {
-      name: "Idea generator"
+    44:{
+      name: "Idea generator", id:44
     },
-    {
-      name: "Image Designer"
+    45:{
+      name: "Image Designer", id:45
     },
-    {
-      name: "Imperial factory worker"
+    46:{
+      name: "Imperial factory worker", id:46
     },
-    {
-      name: "Imperial hunter"
+    47:{
+      name: "Imperial hunter", id:47
     },
-    {
-      name: "Information broker"
+    48:{
+      name: "Information broker", id:48
     },
-    {
-      name: "Jedi hunter"
+    49:{
+      name: "Jedi hunter", id:49
     },
-    {
-      name: "Jockey"
+    50:{
+      name: "Jockey", id:50
     },
-    {
-      name: "Journal Clerk"
+    51:{
+      name: "Journal Clerk", id:51
     },
-    {
-      name: "Junk boss"
+    52:{
+      name: "Junk boss", id:52
     },
-    {
-      name: "Kickboxer"
+    53:{
+      name: "Kickboxer", id:53
     },
-    {
-      name: "Librarian"
+    54:{
+      name: "Librarian", id:54
     },
-    {
-      name: "Loremaster"
+    55:{
+      name: "Loremaster", id:55
     },
-    {
-      name: "Martial artist"
+    56:{
+      name: "Martial artist", id:56
     },
-    {
-      name: "Masseur"
+    57:{
+      name: "Masseur", id:57
     },
-    {
-      name: "Master Archivist"
+    58:{
+      name: "Master Archivist", id:58
     },
-    {
-      name: "Mercenary"
+    59:{
+      name: "Mercenary", id:59
     },
-    {
-      name: "Mineralogist"
+    60:{
+      name: "Mineralogist", id:60
     },
-    {
-      name: "Musician"
+    61{
+      name: "Musician", id:61
     },
-    {
-      name: "Mythologist"
+    62:{
+      name: "Mythologist", id:62
     },
-    {
-      name: "Navigator"
+    63:{
+      name: "Navigator", id:63
     },
-    {
-      name: "Officer"
+    64:{
+      name: "Officer", id:64
     },
-    {
-      name: "Operative"
+    65:{
+      name: "Operative", id:65
     },
-    {
-      name: "Philosopher"
+    66:{
+      name: "Philosopher", id:66
     },
-    {
-      name: "Pilot"
+    67:{
+      name: "Pilot", id:67
     },
-    {
-      name: "Plumber"
+    68:{
+      name: "Plumber", id:68
     },
-    {
-      name: "Portmaster"
+    69:{
+      name: "Portmaster", id:69
     },
-    {
-      name: "Programmer"
+    70:{
+      name: "Programmer", id:70
     },
-    {
-      name: "Quarantine inspector"
+    71:{
+      name: "Quarantine inspector", id:71
     },
-    {
-      name: "Racer"
+    72:{
+      name: "Racer", id:72
     },
-    {
-      name: "Regional Director"
+    73:{
+      name: "Regional Director", id:73
     },
-    {
-      name: "Sailor"
+    74:{
+      name: "Sailor", id:74
     },
-    {
-      name: "Scalphunter"
+    75:{
+      name: "Scalphunter", id:75
     },
-    {
-      name: "Scavenger"
+    76:{
+      name: "Scavenger", id:76
     },
-    {
-      name: "Scholar"
+    77:{
+      name: "Scholar", id:77
     },
-    {
-      name: "Scout"
+    78:{
+      name: "Scout", id:78
     },
-    {
-      name: "Sculptor"
+    79:{
+      name: "Sculptor", id:79
     },
-    {
-      name: "Secretary"
+    80:{
+      name: "Secretary", id:80
     },
-    {
-      name: "Senior Administrator"
+    81:{
+      name: "Senior Administrator", id:81
     },
-    {
-      name: "Steward"
+    82:{
+      name: "Steward", id:82
     },
-    {
-      name: "Judge"
+    83:{
+      name: "Judge", id:83
     },
-    {
-      name: "Systems analyst"
+    84:{
+      name: "Systems analyst", id:84
     },
-    {
-      name: "Tax collector"
+    85:{
+      name: "Tax collector", id:85
     },
-    {
-      name: "Taxidermist"
+    86:{
+      name: "Taxidermist", id:86
     },
-    {
-      name: "Teacher"
+    87:{
+      name: "Teacher", id:87
     },
-    {
-      name: "Tour guide"
+    88:{
+      name: "Tour guide", id:88
     },
-    {
-      name: "Training officer"
+    89:{
+      name: "Training officer", id:89
     },
-    {
-      name: "Travel agent"
+    90:{
+      name: "Travel agent", id:90
     },
-    {
-      name: "Treasure hunting"
+    91:{
+      name: "Treasure hunting", id:91
     },
-    {
-      name: "Weapons master"
+    92:{
+      name: "Weapons master", id:92
     },
-    {
-      name: "electrostaff"
+    93:{
+      name: "electrostaff", id:93
     }
-  ]}
-  
+}
+
 export default Occupations;
