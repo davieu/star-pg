@@ -8,19 +8,33 @@ import { connect } from "react-redux";
 import axios from "axios";
 
 
-import { fetchSpecies, fetchAllSpecies, fetchPlanets, fetchAllPlanets, fetchStarships, fetchAllStarships, fetchVehicles, fetchAllVehicles, fetchOccupations, fetchWeapons, emptyOptions, submitCharacter } from "../actions";
+import { fetchSpecies, fetchAllSpecies, fetchPlanets, fetchAllPlanets, fetchStarships, fetchAllStarships, fetchVehicles, fetchAllVehicles, fetchOccupations, fetchWeapons, emptyOptions, submitCharacter, saveCharacter } from "../actions";
+
+const CHARACTERS_ID = 'star-pgCharacters';
 
 
 
 class AddCharacter extends Component {
+
   constructor(props) {
     super(props);
+    let characters = JSON.parse(localStorage.getItem(CHARACTERS_ID) || '[]')
+    console.log(characters)
+    console.log(characters.length)
+    console.log(characters[0])
+    let id = 1;
+    if (characters.length>0) {
+      console.log(characters[0].id)
+      id = (characters[0].id)+1;
+    } else {
+      id = 1;
+    }
 
     this.state = {
       name: '',
       options: [],
       current_option: '',
-      id: '',
+      id: id,
       species: '',
       homePlanet: '',
       vehicle: '',
@@ -35,7 +49,10 @@ class AddCharacter extends Component {
   }
 //add the contact by executing a function
   submitCharacter = () => {
+    this.props.emptyOptions()
+    console.log(this.props)
     this.props.submitCharacter(this.state)
+    this.props.history.push('/characterList')
   }
 
   viewSpecies = () => {
@@ -45,28 +62,31 @@ class AddCharacter extends Component {
   }
 
   viewPlanets = () => {
+    this.props.emptyOptions()
     this.props.fetchAllPlanets()
-    console.log('tick')
     this.setState({current_option : 'homePlanet'})
   }
 
   viewVehicles = () => {
-
+    this.props.emptyOptions()
     this.props.fetchAllVehicles()
     this.state.current_option = 'vehicle'
   }
 
   viewStarships = () => {
+    this.props.emptyOptions()
     this.props.fetchAllStarships()
     this.state.current_option = 'starship'
   }
 
   viewWeapons = () => {
+    this.props.emptyOptions()
     this.props.fetchWeapons()
     this.state.current_option = 'weapon'
   }
 
   viewOccupations = () => {
+    this.props.emptyOptions()
     this.props.fetchOccupations()
     this.state.current_option = 'occupation'
   }
@@ -80,14 +100,13 @@ class AddCharacter extends Component {
     // });
     let stateAttr = (this.props.options[e.target.value])
 
-    // console.log(stateAttr)
 
     this.setState({[current_option]: stateAttr})
 
   }
 
   render() {
-    console.log(this.props)
+
     return(
       <div className = "container box-center py-3 my-3 border border-dark bg-dark">
         <div className="row">
@@ -194,7 +213,7 @@ class AddCharacter extends Component {
 class OptionsList extends Component {
 
   render(){
-    console.log(this.props)
+
     if (!this.props.options){
       return(
         <div className="text-yellow"> Loading... </div>
@@ -202,9 +221,8 @@ class OptionsList extends Component {
     }
     return _.map(this.props.options, option => {
 
-      console.log(option)
       let stateAttribute = this.props.state[this.props.state.current_option].name
-      // console.log(stateAttribute)
+
       return (
 
           <div className="m-1">
@@ -230,7 +248,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
 
 
-  return bindActionCreators({fetchSpecies, fetchAllSpecies, fetchPlanets, fetchAllPlanets, fetchVehicles, fetchAllVehicles, fetchStarships, fetchAllStarships, fetchWeapons, fetchOccupations, emptyOptions, submitCharacter}, dispatch);
+  return bindActionCreators({fetchSpecies, fetchAllSpecies, fetchPlanets, fetchAllPlanets, fetchVehicles, fetchAllVehicles, fetchStarships, fetchAllStarships, fetchWeapons, fetchOccupations, emptyOptions, submitCharacter, saveCharacter}, dispatch);
 
 }
 

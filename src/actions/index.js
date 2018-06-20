@@ -5,7 +5,10 @@ import SpeciesAttr from "../data/specie_attrs";
 //fetch character gets the info for the create your own characters
 export const FETCH_PEOPLE = "fetch_people";
 export const FETCH_PERSON = "fetch_person";
+export const SUBMIT_CHARACTER = "submit_character";
 export const FETCH_CHARACTERS = "fetch_characters";
+export const SAVE_CHARACTER = "save_character";
+
 export const FETCH_SPECIES = "fetch_species";
 export const FETCH_PLANETS = "fetch_planets";
 export const FETCH_VEHICLES = "fetch_vehicles";
@@ -13,14 +16,13 @@ export const FETCH_STARSHIPS = "fetch_starships";
 export const FETCH_WEAPONS = "fetch_weapons";
 export const FETCH_OCCUPATIONS = "fetch_occupations";
 export const EMPTY_OPTIONS = "empty_options";
-export const SUBMIT_CHARACTER = "submit_character";
-
 
 
 const ROOT_SWAPI_URL = "https://swapi.co/api";
+const CHARACTERS_ID = 'star-pgCharacters';
 
 export function fetchWeapons() {
-  console.log('STEP 1')
+
   return {
     type: FETCH_WEAPONS,
   };
@@ -28,7 +30,7 @@ export function fetchWeapons() {
 
 
 export function fetchOccupations(){
-  console.log('STEP 1')
+
   return {
     type: FETCH_OCCUPATIONS,
   };
@@ -36,13 +38,11 @@ export function fetchOccupations(){
 
 export function fetchStarWarsPeople(page){
 
-
   const request = axios.get(`${ROOT_SWAPI_URL}/people/?page=${page}`)
-  console.log(request)
+
 
   return {
     type: FETCH_PEOPLE,
-    // page: 1,
     payload: request,
 
   };
@@ -71,7 +71,7 @@ export function fetchAllStarWarsPeople() {
 
 export function fetchStarWarsPerson(id) {
   const request = axios.get(`${ROOT_SWAPI_URL}/people/${id}/`)
-  console.log(request)
+
 
   return {
     type: FETCH_PERSON,
@@ -83,55 +83,53 @@ export function fetchStarWarsPerson(id) {
 
 
 // TODO: Finish this fetchCharacter function 'test'
-export function fetchCharacters() {
-  const request = [{
-      id: '101',
-      species: 'Ewok',
-      homePlanet: 'Tatooine',
-      vehicle: 'TIE bomber',
-      starship: 'Executor',
-      occupation: 'Animal trainer',
-      gender: 'male',
-      eye_color: 'red',
-      stats: {
-        'STR': 0,
-        'DEX': 0,
-        'CON': 3,
-        'WIS': 4,
-        'CHA': 2
-      },
-    },
-    {
-      id: '101',
-      species: 'Trandoshan',
-      homePlanet: 'Alderaan',
-      vehicle: 'Sand Crawler',
-      starship: 'Death Star',
-      occupation: 'Code dealer',
-      gender: 'female',
-      eye_color: 'blue',
-      stats: {
-        'STR': 0,
-        'DEX': 0,
-        'CON': 3,
-        'WIS': 4,
-        'CHA': 2
-      },
-    }
-  ]
-  console.log(request)
+// export function fetchCharacters() {
+//   const request = [{
+//       id: '101',
+//       species: 'Ewok',
+//       homePlanet: 'Tatooine',
+//       vehicle: 'TIE bomber',
+//       starship: 'Executor',
+//       occupation: 'Animal trainer',
+//       gender: 'male',
+//       eye_color: 'red',
+//       stats: {
+//         'STR': 0,
+//         'DEX': 0,
+//         'CON': 3,
+//         'WIS': 4,
+//         'CHA': 2
+//       },
+//     },
+//     {
+//       id: '101',
+//       species: 'Trandoshan',
+//       homePlanet: 'Alderaan',
+//       vehicle: 'Sand Crawler',
+//       starship: 'Death Star',
+//       occupation: 'Code dealer',
+//       gender: 'female',
+//       eye_color: 'blue',
+//       stats: {
+//         'STR': 0,
+//         'DEX': 0,
+//         'CON': 3,
+//         'WIS': 4,
+//         'CHA': 2
+//       },
+//     }
+//   ]
 
-  return {
-    type: FETCH_CHARACTERS,
-    payload: request
-  };
-}
+//
+//   return {
+//     type: FETCH_CHARACTERS,
+//     payload: request
+//   };
+// }
 
 //action for getting species planet vehicles starships below
 export function fetchSpecies(page) {
   const request = axios.get(`${ROOT_SWAPI_URL}/species/?page=${page}`);
-  console.log(request)
-  console.log('fetch tick')
   return {
     type: FETCH_SPECIES,
     payload: request
@@ -156,7 +154,7 @@ export function fetchAllSpecies() {
 
   export function fetchPlanets(page) {
     const request = axios.get(`${ROOT_SWAPI_URL}/planets/?page=${page}`)
-    console.log(request)
+
 
     return {
       type: FETCH_PLANETS,
@@ -182,7 +180,7 @@ export function fetchAllSpecies() {
 
   export function fetchVehicles(page) {
     const request = axios.get(`${ROOT_SWAPI_URL}/vehicles/?page=${page}`)
-    console.log(request)
+
 
     return {
       type: FETCH_VEHICLES,
@@ -205,7 +203,7 @@ export function fetchAllSpecies() {
 
   export function fetchStarships(page) {
     const request = axios.get(`${ROOT_SWAPI_URL}/starships/?page=${page}`)
-    console.log(request)
+
 
 
     return {
@@ -234,9 +232,6 @@ export function fetchAllSpecies() {
     )
   }
 
-  export function fetchOccupations() {
-    const request = axios.get(`${ROOT_SWAPI_URL}/starships/`)
-    console.log(request)
 
 
   export function submitCharacter(data) {
@@ -248,12 +243,18 @@ export function fetchAllSpecies() {
 
 
 
+export function  saveCharacter(data) {
+  localStorage.setItem(CHARACTERS_ID, JSON.stringify(data));
+  return {
+    type: SAVE_CHARACTER
+  }
+}
 
+export function  fetchCharacters() {
+  let characters = JSON.parse(localStorage.getItem(CHARACTERS_ID) || '[]')
+  return {
+    type: FETCH_CHARACTERS,
+    payload: characters
+  }
 
-
-
-  // TODO: somehow, fetchStarWarsPeople needs to store it's payload in the state. When do we need the Google API to fetch? I don't know what the image data looks like.
-
-
-
-  // TODO: payload needs to go to Google API to find images
+}

@@ -184,7 +184,7 @@ const Occupations = {
     60:{
       name: "Mineralogist", id:60
     },
-    61{
+    61:{
       name: "Musician", id:61
     },
     62:{
