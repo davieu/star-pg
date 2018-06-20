@@ -42,7 +42,7 @@ class PeopleList extends Component {
       .then(function (response) {
         console.log(response);
       })
-    console.log(request)
+  
   }
 
   renderPeople() {
@@ -95,8 +95,8 @@ class PeopleList extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {people: state.people};
+function mapStateToProps(store) {
+  return {people: store.people};
 }
 
 function mapDispatchToProps(dispatch) {

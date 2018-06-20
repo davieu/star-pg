@@ -7,8 +7,9 @@ import Weapons from "../data/weapons";
 
 
 const rootReducer = combineReducers({
-  people: ListsReducer, // TODO: rename to whatever we rename the reducer-people to
-  options: OptionsReducer // TODO: OPTIONS REDUCER because it pulls planet, species, etc... from SWAPI and stripped JSON data that Ilona was able to grab
+  people: ListsReducer,
+  options: OptionsReducer,
+  current_person: {}
 });
 
 export default rootReducer;

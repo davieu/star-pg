@@ -6,10 +6,11 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
-class PersonShow extends Component {
+class CharacterShow extends Component {
   constructor(props) {
     super()
-
+    console.log(props)
+    console.log(props.people[1])
   }
 
   componentDidMount() {
@@ -18,17 +19,21 @@ class PersonShow extends Component {
 
 
   render() {
+    console.log(this.props)
     // TODO: render person details
-    return
+    return(
+      <div> Loading ... </div>
+    )
   }
 }
 
 function mapStateToProps(state) {
-// TODO:
+  console.log(state.people)
+  return {people: state.people};
 }
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({/* TODO: */ }, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(PersonShow);
+export default connect(mapStateToProps)(CharacterShow);

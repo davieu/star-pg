@@ -20,7 +20,6 @@ import 'bootstrap/dist/css/bootstrap.css'
 const createStoreWithMiddleware = applyMiddleware(promise, thunk)(createStore);
 
 
-
 const Header = () => (
   <div>
     <header className="App-header">
@@ -46,7 +45,7 @@ const Main = () => (
     <Switch>
       <Route exact path='/' component={Home}/>
       <Route exact path='/peopleList/:id' component={PersonShow}/>
-      <Route exact path='/characterList/:d' component={CharacterShow}/>
+      <Route exact path='/characterList/:id' component={CharacterShow}/>
       <Route exact path='/addCharacter' component={AddCharacter}/>
     </Switch>
   </div>
@@ -56,7 +55,7 @@ const SideNav = () => (
   <div className="side-nav bg-dark pt-1">
   <Switch>
     <Route path='/peopleList' component={PeopleList}/>
-    <Route exact path='/characterList' component={CharacterList}/>
+    <Route path='/characterList' component={CharacterList}/>
   </Switch>
 
   </div>

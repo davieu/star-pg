@@ -5,15 +5,18 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
+import { fetchCharacters } from "../actions"
+
 // TODO: Character List could be a pop-out side nav-bar or just a view when you click 'PEOPLE' in the header
 class CharacterList extends Component {
   constructor(props) {
-    super()
+    super(props)
+    console.log(props)
 
   }
 
   componentDidMount() {
-    // TODO: fetch character names from localStorage
+    this.props.fetchCharacters()
   }
 
   renderCharacters() {
@@ -21,7 +24,7 @@ class CharacterList extends Component {
 
       return (
         <li className="list-group-item bg-dark" key={1}>
-          <Link className="text-white" to={`/peopleList/1`}>
+          <Link className="text-white" to={`/characterList/1`}>
             {person.name}
           </Link>
         </li>
@@ -30,6 +33,7 @@ class CharacterList extends Component {
   }
 
   render() {
+    console.log(this.props)
     // TODO: render DOM that will contain an element that calls renderCharacters().
     return(
       <div>
@@ -53,11 +57,12 @@ class CharacterList extends Component {
 }
 
 function mapStateToProps(state) {
+  console.log(state)
   return {people: state.people};
 }
 
-// function mapDispatchToProps(dispatch) {
-//   return bindActionCreators({/* TODO: */ }, dispatch);
-// }
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({fetchCharacters}, dispatch);
+}
 
-export default connect(mapStateToProps)(CharacterList);
+export default connect(mapStateToProps, mapDispatchToProps)(CharacterList);

@@ -6,6 +6,8 @@ import {
   SUBMIT_CHARACTER
 } from "../actions";
 
+const CHARACTERS_ID = 'star-pgCharacters';
+
 export default function(state = {}, action) {
 
   switch (action.type) {
@@ -41,10 +43,12 @@ export default function(state = {}, action) {
       return _.mapKeys(action.payload.data, "id");
 
     case FETCH_CHARACTERS:
-      return _.mapKeys(action.payload.data, "id");
+    console.log(action.payload)
+      return _.mapKeys(action.payload, "name");
 
     case SUBMIT_CHARACTER:
-    console.log(action)
+      let characters = [action.payload, ...JSON.parse(localStorage.getItem(CHARACTERS_ID) || '[]')]
+      localStorage.setItem(CHARACTERS_ID, JSON.stringify(characters))
       return [action.payload, ...state]
 
     default:
